@@ -1,6 +1,12 @@
 'use client';
 
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/i18n/translations';
+
 export default function Navbar() {
+  const { lang, setLang } = useLanguage();
+  const T = translations[lang].nav;
+
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -18,13 +24,13 @@ export default function Navbar() {
         <span className="text-pizza-muted text-base ml-1">Music</span>
       </button>
 
-      <ul className="hidden md:flex gap-6 list-none">
-        {[
-          { label: '🎵 Canciones', id: 'canciones' },
-          { label: '🏆 Concurso', id: 'concurso' },
-          { label: '🗳️ Votaciones', id: 'votaciones' },
-          { label: '📍 Eventos', id: 'eventos' },
-        ].map(({ label, id }) => (
+      <ul className="hidden md:flex gap-6 list-none items-center">
+        {([
+          { label: T.songs,   id: 'canciones'  },
+          { label: T.contest, id: 'concurso'   },
+          { label: T.voting,  id: 'votaciones' },
+          { label: T.events,  id: 'eventos'    },
+        ] as const).map(({ label, id }) => (
           <li key={id}>
             <button
               onClick={() => scrollTo(id)}
@@ -34,12 +40,39 @@ export default function Navbar() {
             </button>
           </li>
         ))}
+
+        {/* Language toggle */}
+        <li>
+          <div className="flex items-center gap-0.5 bg-pizza-raised border border-pizza-border rounded-full p-0.5">
+            <button
+              onClick={() => setLang('es')}
+              className={`px-3 py-1 rounded-full text-[0.7rem] font-body font-extrabold uppercase tracking-[0.06em] cursor-pointer transition-all border-none ${
+                lang === 'es'
+                  ? 'bg-pizza-orange text-white shadow-sm'
+                  : 'bg-transparent text-pizza-muted hover:text-pizza-body'
+              }`}
+            >
+              ES
+            </button>
+            <button
+              onClick={() => setLang('en')}
+              className={`px-3 py-1 rounded-full text-[0.7rem] font-body font-extrabold uppercase tracking-[0.06em] cursor-pointer transition-all border-none ${
+                lang === 'en'
+                  ? 'bg-pizza-orange text-white shadow-sm'
+                  : 'bg-transparent text-pizza-muted hover:text-pizza-body'
+              }`}
+            >
+              EN
+            </button>
+          </div>
+        </li>
+
         <li>
           <button
             onClick={() => scrollTo('concurso')}
             className="bg-transparent text-pizza-orange font-body font-bold text-sm uppercase tracking-[0.08em] px-4 py-1.5 rounded-[20px] border border-pizza-orange cursor-pointer transition-all hover:bg-pizza-orange hover:text-white"
           >
-            Participar
+            {T.cta}
           </button>
         </li>
       </ul>

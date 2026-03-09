@@ -1,11 +1,15 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/i18n/translations';
 import { contestEntries } from '@/lib/data/contestEntries';
 
 export default function VotingPanel() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [voted, setVoted] = useState<Set<number>>(new Set());
+  const { lang } = useLanguage();
+  const T = translations[lang].voting;
 
   const scroll = (dir: 'left' | 'right') => {
     if (!scrollRef.current) return;
@@ -34,16 +38,16 @@ export default function VotingPanel() {
       {/* Section header */}
       <div className="text-center mb-10 px-8 relative z-10">
         <div className="inline-block bg-transparent border border-white text-white text-xs font-body font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-[20px] mb-4 opacity-90">
-          🗳️ Votaciones
+          {T.badge}
         </div>
         <h2
           className="font-display italic text-white mb-2"
           style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', textShadow: '0 2px 20px rgba(28,8,0,0.4)' }}
         >
-          Vota por tu <span className="text-pizza-yellow">Favorita</span>
+          {T.title} <span className="text-pizza-yellow">{T.highlight}</span>
         </h2>
         <p className="max-w-[520px] mx-auto leading-[1.8] font-body text-[0.9rem]" style={{ color: 'rgba(255,240,220,0.85)' }}>
-          La comunidad decide. Cada voto cuenta para determinar los ganadores.
+          {T.description}
         </p>
       </div>
 
@@ -63,10 +67,10 @@ export default function VotingPanel() {
               className="font-display italic text-pizza-dark leading-none"
               style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)' }}
             >
-              🗳️ Candidatas al concurso
+              {T.carouselTitle}
             </h3>
             <span className="text-pizza-muted font-body text-[0.7rem] hidden sm:inline">
-              {contestEntries.length} canciones
+              {contestEntries.length} {T.songs}
             </span>
           </div>
           <div className="hidden md:flex gap-2">
@@ -155,7 +159,7 @@ export default function VotingPanel() {
 
                 {/* Count + button */}
                 <div className="flex items-center justify-between">
-                  <span className="text-[0.72rem] text-pizza-muted font-body">🗳️ {entry.votes} votos</span>
+                  <span className="text-[0.72rem] text-pizza-muted font-body">🗳️ {entry.votes} {T.votes}</span>
                   <button
                     onClick={() => toggleVote(entry.id)}
                     className={`px-3.5 py-1.5 rounded-[20px] font-accent text-[0.8rem] cursor-pointer transition-all duration-200 flex items-center gap-1.5 border ${
@@ -164,7 +168,7 @@ export default function VotingPanel() {
                         : 'bg-transparent text-pizza-orange border-pizza-orange hover:bg-pizza-orange hover:text-white'
                     }`}
                   >
-                    ❤️ {voted.has(entry.id) ? 'Votado' : 'Votar'}
+                    ❤️ {voted.has(entry.id) ? T.voted : T.vote}
                   </button>
                 </div>
               </div>
@@ -177,8 +181,8 @@ export default function VotingPanel() {
               onClick={() => window.dispatchEvent(new CustomEvent('openPostulationModal'))}
             >
               <div className="text-3xl mb-2 transition-transform duration-200 group-hover/cta:scale-110">🎤</div>
-              <div className="font-display italic text-[0.95rem] text-pizza-muted mb-1 group-hover/cta:text-pizza-orange transition-colors">Tu canción aquí</div>
-              <div className="text-[0.78rem] text-pizza-muted opacity-60 font-body group-hover/cta:opacity-100 transition-opacity">Postúlate al concurso</div>
+              <div className="font-display italic text-[0.95rem] text-pizza-muted mb-1 group-hover/cta:text-pizza-orange transition-colors">{T.ctaTitle}</div>
+              <div className="text-[0.78rem] text-pizza-muted opacity-60 font-body group-hover/cta:opacity-100 transition-opacity">{T.ctaDesc}</div>
             </div>
           </div>
         </div>
@@ -186,10 +190,10 @@ export default function VotingPanel() {
         {/* Footer row */}
         <div className="flex items-center justify-between px-5 py-2 border-t border-[rgba(232,194,128,0.25)]">
           <span className="text-[0.6rem] text-pizza-muted font-body uppercase tracking-[0.15em]">
-            PizzaDAO Music Contest · 2026
+            {T.footer}
           </span>
           <span className="text-[0.6rem] text-pizza-muted opacity-80 font-body uppercase tracking-[0.1em]">
-            ⏳ Fecha límite: Abril 20
+            {T.deadline}
           </span>
         </div>
       </div>

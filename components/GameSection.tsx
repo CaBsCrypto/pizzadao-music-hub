@@ -1,4 +1,12 @@
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/i18n/translations';
+
 export default function GameSection() {
+  const { lang } = useLanguage();
+  const T = translations[lang].game;
+
   return (
     <section id="game" className="py-20 px-8 bg-pizza-dark-bg relative overflow-hidden">
       {/* Subtle grid background */}
@@ -15,7 +23,7 @@ export default function GameSection() {
         {/* Section header */}
         <div className="text-center mb-10">
           <div className="inline-block bg-transparent border border-[rgba(255,104,32,0.5)] text-pizza-orange text-xs font-body font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-[20px] mb-4">
-            🎮 Mini Game
+            {T.badge}
           </div>
           <h2
             className="font-display italic text-pizza-cream mb-2"
@@ -47,7 +55,7 @@ export default function GameSection() {
         </div>
 
         <p className="mt-6 text-[0.8rem] font-body text-center max-w-[400px] leading-relaxed tracking-[0.03em]" style={{ color: 'rgba(255,240,220,0.5)' }}>
-          Corta las notas al ritmo de la música de PizzaDAO y sube tu score en el ranking de la comunidad.
+          {T.description}
         </p>
       </div>
     </section>

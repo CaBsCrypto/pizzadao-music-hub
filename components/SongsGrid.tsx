@@ -1,6 +1,8 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/i18n/translations';
 import { songs } from '@/lib/data/songs';
 import { Song } from '@/lib/types';
 import VideoModal from '@/components/VideoModal';
@@ -8,6 +10,8 @@ import VideoModal from '@/components/VideoModal';
 export default function SongsGrid() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [selectedSong, setSelectedSong] = useState<Song | null>(null);
+  const { lang } = useLanguage();
+  const T = translations[lang].songs;
 
   const scroll = (dir: 'left' | 'right') => {
     if (!scrollRef.current) return;
@@ -43,9 +47,9 @@ export default function SongsGrid() {
               className="font-display italic text-pizza-dark leading-none"
               style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)' }}
             >
-              🎵 Canciones PizzaDAO
+              {T.title}
             </h2>
-            <span className="text-pizza-muted font-body text-[0.7rem] hidden sm:inline">14 tracks</span>
+            <span className="text-pizza-muted font-body text-[0.7rem] hidden sm:inline">{T.tracks}</span>
           </div>
 
           {/* Arrow buttons */}

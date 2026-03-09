@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fredoka, Playfair_Display, Nunito } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const fredoka = Fredoka({
   weight: ["400", "600"],
@@ -37,7 +38,7 @@ export default function RootLayout({
       <body
         className={`${fredoka.variable} ${playfairDisplay.variable} ${nunito.variable} font-body antialiased bg-pizza-bg text-pizza-body overflow-x-hidden`}
       >
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

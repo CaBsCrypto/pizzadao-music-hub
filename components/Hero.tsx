@@ -1,6 +1,12 @@
 'use client';
 
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/i18n/translations';
+
 export default function Hero() {
+  const { lang } = useLanguage();
+  const T = translations[lang].hero;
+
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -40,7 +46,7 @@ export default function Hero() {
       <div className="text-center max-w-[800px] px-8 relative z-10">
         {/* Badge */}
         <div className="inline-block bg-transparent border border-pizza-orange text-pizza-orange text-xs font-body font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-[20px] mb-6 animate-pulse-badge">
-          🌎 La música de la comunidad Web3
+          {T.badge}
         </div>
 
         {/* Title */}
@@ -53,7 +59,7 @@ export default function Hero() {
         >
           Pizza<span className="text-pizza-gold not-italic">DAO</span>
           <br />
-          Música Web3 🎵
+          {T.title}
         </h1>
 
         {/* Subtitle */}
@@ -66,7 +72,7 @@ export default function Hero() {
 
         {/* Description */}
         <p className="max-w-[540px] mx-auto mb-10 leading-[1.8] font-body text-[0.95rem]" style={{ color: 'rgba(255,240,220,0.8)' }}>
-          El espacio oficial de la música de PizzaDAO. Escucha las canciones de la comunidad, participa en el primer concurso en español y vota por tus favoritas.
+          {T.description}
         </p>
 
         {/* Buttons */}
@@ -75,23 +81,23 @@ export default function Hero() {
             onClick={() => scrollTo('canciones')}
             className="bg-pizza-orange text-white px-8 py-3.5 rounded-full font-accent text-lg border-none cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(255,104,32,0.5)] flex items-center gap-2 shadow-[0_4px_20px_rgba(255,104,32,0.3)]"
           >
-            🎵 Escuchar Canciones
+            {T.btn1}
           </button>
           <button
             onClick={() => scrollTo('concurso')}
             className="bg-transparent text-pizza-cream px-8 py-3.5 rounded-full font-accent text-lg cursor-pointer transition-all hover:-translate-y-1 hover:bg-[rgba(255,247,238,0.15)] flex items-center gap-2"
             style={{ border: '1px solid rgba(255,247,238,0.6)' }}
           >
-            🏆 Participar en el Concurso
+            {T.btn2}
           </button>
         </div>
 
         {/* Stats */}
         <div className="flex justify-center gap-12 mt-12 pt-8" style={{ borderTop: '1px solid rgba(255,168,80,0.2)' }}>
           {[
-            { num: '14',    label: 'Canciones' },
-            { num: '$1,500', label: 'En premios' },
-            { num: '∞',     label: 'Pizzas' },
+            { num: '14',     label: T.statSongs  },
+            { num: '$1,500', label: T.statPrizes },
+            { num: '∞',      label: T.statPizzas },
           ].map(({ num, label }) => (
             <div key={label} className="text-center">
               <span className="font-display italic text-[2rem] text-pizza-gold block">{num}</span>

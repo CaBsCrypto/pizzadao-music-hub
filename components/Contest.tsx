@@ -1,12 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-
-const prizes = [
-  { medal: '🥇', place: '1er Lugar', desc: 'Mejor canción original en español', amount: '$500', coin: 'USDC', style: 'gold' },
-  { medal: '🥈', place: '2do Lugar', desc: 'Segundo mejor track',               amount: '$300', coin: 'USDC', style: 'silver' },
-  { medal: '🥉', place: '3er Lugar', desc: 'Tercer mejor track',                amount: '$200', coin: 'USDC', style: 'bronze' },
-];
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/i18n/translations';
 
 const prizeStyles: Record<string, { border: string; color: string; shadow: string; glow: string }> = {
   gold:   { border: '#C9A227', color: '#A07800', shadow: '0 0 24px rgba(201,162,39,0.12)', glow: 'rgba(201,162,39,0.04)' },
@@ -14,22 +10,13 @@ const prizeStyles: Record<string, { border: string; color: string; shadow: strin
   bronze: { border: '#A0632A', color: '#804010', shadow: '0 0 16px rgba(160,99,42,0.08)',   glow: 'rgba(160,99,42,0.02)' },
 };
 
-const rules = [
-  'La canción debe ser original y en idioma español',
-  'Temática: pizza, comunidad Web3, PizzaDAO, celebración',
-  'Duración mínima de 2 minutos y máxima de 6 minutos',
-  'Postular mediante link a plataforma de streaming (SoundCloud, Spotify, YouTube)',
-  'Un artista puede postular máximo 2 canciones',
-  'Las canciones postuladas deben ser publicadas bajo licencia CC0 (dominio público)',
-  'CC0 permite que la comunidad use, remixe y comparta libremente la canción',
-  'Resultados determinados por votación comunitaria + jurado PizzaDAO',
-];
-
 const countries = ['Argentina', 'Chile', 'Colombia', 'México', 'Perú', 'Venezuela', 'España', 'Otro'];
 
 export default function Contest() {
   const [form, setForm] = useState({ artist: '', song: '', link: '', wallet: '', country: '' });
   const [modalOpen, setModalOpen] = useState(false);
+  const { lang } = useLanguage();
+  const T = translations[lang].contest;
 
   useEffect(() => {
     const handler = () => setModalOpen(true);
@@ -39,7 +26,7 @@ export default function Contest() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('¡Postulación recibida! Te contactaremos pronto. 🍕');
+    alert(T.modal.successMsg);
     setForm({ artist: '', song: '', link: '', wallet: '', country: '' });
     setModalOpen(false);
   };
@@ -79,8 +66,8 @@ export default function Contest() {
           >
             <div className="flex items-center justify-between px-8 pt-7 pb-4 border-b border-[rgba(232,194,128,0.3)]">
               <div>
-                <div className="font-display italic text-[1.5rem] text-pizza-orange leading-tight">🎤 Postula tu Canción</div>
-                <div className="text-[0.8rem] text-pizza-muted font-body mt-0.5">PizzaDAO Music Contest · Abril 20, 2026</div>
+                <div className="font-display italic text-[1.5rem] text-pizza-orange leading-tight">{T.modal.title}</div>
+                <div className="text-[0.8rem] text-pizza-muted font-body mt-0.5">{T.modal.subtitle}</div>
               </div>
               <button
                 onClick={() => setModalOpen(false)}
@@ -88,12 +75,7 @@ export default function Contest() {
               >✕</button>
             </div>
             <form onSubmit={handleSubmit} className="px-8 py-6 space-y-4">
-              {[
-                { label: 'Nombre del Artista',           key: 'artist', placeholder: 'Tu nombre artístico…',          type: 'text' },
-                { label: 'Nombre de la Canción',         key: 'song',   placeholder: 'Título de tu track…',           type: 'text' },
-                { label: 'Link a la canción',            key: 'link',   placeholder: 'SoundCloud / Spotify / YouTube…',type: 'url'  },
-                { label: 'Wallet (para recibir premios)',key: 'wallet', placeholder: '0x…',                           type: 'text' },
-              ].map(({ label, key, placeholder, type }) => (
+              {T.modal.fields.map(({ label, key, placeholder, type }) => (
                 <div key={key}>
                   <label className="block text-[0.72rem] font-bold uppercase tracking-[0.12em] text-pizza-body mb-1.5 font-body">{label}</label>
                   <input
@@ -106,20 +88,20 @@ export default function Contest() {
                 </div>
               ))}
               <div>
-                <label className="block text-[0.72rem] font-bold uppercase tracking-[0.12em] text-pizza-body mb-1.5 font-body">País</label>
+                <label className="block text-[0.72rem] font-bold uppercase tracking-[0.12em] text-pizza-body mb-1.5 font-body">{T.modal.countryLabel}</label>
                 <select
                   value={form.country}
                   onChange={(e) => setForm({ ...form, country: e.target.value })}
                   className="w-full bg-pizza-raised border border-pizza-border rounded-lg px-4 py-2.5 text-pizza-dark font-body text-[0.9rem] focus:outline-none focus:border-pizza-orange transition-colors cursor-pointer"
                 >
-                  <option value="" disabled className="bg-white">Selecciona tu país…</option>
+                  <option value="" disabled className="bg-white">{T.modal.countryPlaceholder}</option>
                   {countries.map((c) => <option key={c} value={c} className="bg-white">{c}</option>)}
                 </select>
               </div>
               <button
                 type="submit"
                 className="w-full bg-pizza-orange text-white py-3.5 rounded-full font-accent text-lg border-none cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(255,104,32,0.4)] shadow-[0_4px_20px_rgba(255,104,32,0.25)] mt-2"
-              >🍕 Postular mi Canción</button>
+              >{T.modal.submitBtn}</button>
             </form>
           </div>
         </div>
@@ -138,16 +120,16 @@ export default function Contest() {
         {/* ── ZONA 1: Header ── */}
         <div className="text-center mb-14 relative z-10">
           <div className="inline-block bg-transparent border border-pizza-orange text-pizza-orange text-xs font-body font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-[20px] mb-4">
-            🔥 Nuevo
+            {T.badge}
           </div>
           <h2
             className="font-display italic text-pizza-cream mb-3"
             style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', textShadow: '0 0 40px rgba(255,104,32,0.2)' }}
           >
-            Concurso en Español 🎤
+            {T.title}
           </h2>
           <p className="max-w-[560px] mx-auto leading-[1.8] font-body text-[0.9rem]" style={{ color: 'rgba(255,240,220,0.7)' }}>
-            PizzaDAO busca a los mejores artistas de LATAM. Crea una canción original en español y gana premios en stablecoins.
+            {T.description}
           </p>
         </div>
 
@@ -194,20 +176,20 @@ export default function Contest() {
                 }}
               >
                 <span className="text-2xl mb-0.5">🎤</span>
-                <span className="text-[0.6rem] font-black text-white uppercase tracking-[0.15em] leading-none">Postular</span>
+                <span className="text-[0.6rem] font-black text-white uppercase tracking-[0.15em] leading-none">{T.vinyl}</span>
                 <div className="absolute w-3 h-3 rounded-full bg-[#1C0800]" />
               </div>
             </div>
 
             <p className="text-[0.7rem] font-body tracking-wide" style={{ color: 'rgba(255,240,220,0.5)' }}>
-              Fecha límite: 20 de Abril, 2026 &nbsp;·&nbsp; ✅ Abierto
+              {T.deadlineLabel} &nbsp;·&nbsp; {T.open}
             </p>
           </div>
 
           {/* Col derecha — Premios */}
           <div>
-            <h3 className="font-display italic text-[1.5rem] text-pizza-cream mb-5 tracking-wide">💰 Premios</h3>
-            {prizes.map((p) => {
+            <h3 className="font-display italic text-[1.5rem] text-pizza-cream mb-5 tracking-wide">{T.prizesTitle}</h3>
+            {T.prizes.map((p) => {
               const s = prizeStyles[p.style];
               return (
                 <div
@@ -233,7 +215,7 @@ export default function Contest() {
             {/* Collab note */}
             <div className="mt-4 px-1">
               <p className="text-[0.8rem] leading-relaxed font-body" style={{ color: 'rgba(255,240,220,0.55)' }}>
-                🤝 <span style={{ color: 'rgba(255,240,220,0.8)' }}>Los ganadores son invitados a eventos IRL de Música Web3</span> y su canción entra al catálogo oficial de PizzaDAO.
+                🤝 <span style={{ color: 'rgba(255,240,220,0.8)' }}>{T.collab}</span> {T.collabDesc}
               </p>
             </div>
           </div>
@@ -250,16 +232,16 @@ export default function Contest() {
         >
           {/* Header row */}
           <div className="flex items-center justify-between px-6 py-3 border-b border-[rgba(232,194,128,0.35)]">
-            <span className="font-display italic text-pizza-orange text-[1.05rem] tracking-wide">📋 Bases del Concurso</span>
-            <span className="text-[0.65rem] text-pizza-muted font-body uppercase tracking-[0.15em]">8 condiciones</span>
+            <span className="font-display italic text-pizza-orange text-[1.05rem] tracking-wide">{T.rulesTitle}</span>
+            <span className="text-[0.65rem] text-pizza-muted font-body uppercase tracking-[0.15em]">{T.rules.length} {lang === 'es' ? 'condiciones' : 'conditions'}</span>
           </div>
           {/* Rules 2-col grid */}
           <div className="grid md:grid-cols-2 gap-0 px-6 py-4">
-            {rules.map((rule, i) => (
+            {T.rules.map((rule, i) => (
               <div
                 key={i}
                 className="flex items-start gap-2.5 py-2.5 font-body text-[0.83rem] text-pizza-body"
-                style={{ borderBottom: i < rules.length - 2 ? '1px solid rgba(232,194,128,0.2)' : 'none' }}
+                style={{ borderBottom: i < T.rules.length - 2 ? '1px solid rgba(232,194,128,0.2)' : 'none' }}
               >
                 <span className="text-pizza-orange opacity-60 text-[0.65rem] mt-0.5 flex-shrink-0">🍕</span>
                 {rule}

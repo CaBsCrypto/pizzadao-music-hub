@@ -1,20 +1,20 @@
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/i18n/translations';
+
 export default function Footer() {
-  const links = [
-    { label: 'PizzaDAO.com', href: '#' },
-    { label: 'Música Web3',  href: '#' },
-    { label: 'Twitter',      href: '#' },
-    { label: 'Discord',      href: '#' },
-    { label: 'Bases del Concurso', href: '#' },
-  ];
+  const { lang } = useLanguage();
+  const T = translations[lang].footer;
 
   return (
     <footer className="bg-pizza-dark-bg border-t border-[rgba(255,104,32,0.2)] px-8 py-12 text-center">
       <div className="font-accent text-[1.8rem] text-pizza-cream mb-2 tracking-wide">🍕 PizzaDAO Music</div>
       <p className="text-[0.85rem] max-w-[380px] mx-auto mb-8 font-body leading-relaxed tracking-[0.03em]" style={{ color: 'rgba(255,240,220,0.5)' }}>
-        La plataforma oficial de música de PizzaDAO. Construida por la comunidad, para la comunidad.
+        {T.description}
       </p>
       <div className="flex justify-center gap-8 flex-wrap mb-8">
-        {links.map(({ label, href }) => (
+        {T.links.map(({ label, href }) => (
           <a
             key={label}
             href={href}
@@ -36,7 +36,7 @@ export default function Footer() {
           <span className="text-[0.85rem]">🄯</span> CC0 · No Rights Reserved
         </a>
         <p className="text-[0.65rem] font-body tracking-[0.05em] uppercase" style={{ color: 'rgba(255,240,220,0.2)' }}>
-          2026 PizzaDAO Music Hub · Construido con 🍕 y Web3
+          {T.copy}
         </p>
       </div>
     </footer>

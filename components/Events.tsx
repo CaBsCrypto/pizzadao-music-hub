@@ -1,11 +1,15 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/lib/i18n/translations';
 import { events } from '@/lib/data/events';
 
 export default function Events() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [tab, setTab] = useState<'upcoming' | 'past'>('upcoming');
+  const { lang } = useLanguage();
+  const T = translations[lang].events;
 
   const filtered = events.filter((e) => e.status === tab);
 
@@ -41,13 +45,13 @@ export default function Events() {
               className="font-display italic text-pizza-dark leading-none"
               style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)' }}
             >
-              📍 Eventos IRL
+              {T.title}
             </h2>
             {/* Tabs */}
             <div className="flex gap-1.5">
               {([
-                { key: 'upcoming', label: '🔮 Próximos' },
-                { key: 'past',     label: '📸 Pasados'  },
+                { key: 'upcoming', label: T.upcoming },
+                { key: 'past',     label: T.past     },
               ] as const).map(({ key, label }) => (
                 <button
                   key={key}
@@ -120,7 +124,7 @@ export default function Events() {
                         : 'bg-pizza-raised text-pizza-muted'
                     }`}
                   >
-                    {event.status === 'upcoming' ? 'Próximo' : 'Pasado'}
+                    {event.status === 'upcoming' ? T.statusUpcoming : T.statusPast}
                   </div>
                 </div>
 
@@ -145,10 +149,10 @@ export default function Events() {
         {/* Footer row */}
         <div className="flex items-center justify-between px-5 py-2 border-t border-[rgba(232,194,128,0.25)]">
           <span className="text-[0.6rem] text-pizza-muted font-body uppercase tracking-[0.15em]">
-            PizzaDAO · Eventos Web3 · LATAM & Global
+            {T.footer}
           </span>
           <span className="text-[0.6rem] text-pizza-muted opacity-70 font-body uppercase tracking-[0.1em]">
-            {filtered.length} eventos
+            {T.eventCount(filtered.length)}
           </span>
         </div>
       </div>
