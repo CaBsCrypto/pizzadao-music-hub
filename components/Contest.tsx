@@ -136,54 +136,134 @@ export default function Contest() {
         {/* ── ZONA 2: Vinyl | Premios ── */}
         <div className="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-8 items-center mb-10 relative z-10">
 
-          {/* Col izquierda — Vinyl CTA */}
-          <div
-            className="flex flex-col items-center justify-center gap-6 rounded-2xl py-10"
-            style={{
-              background: 'radial-gradient(ellipse at center, rgba(220,38,38,0.18) 0%, rgba(220,38,38,0.05) 50%, transparent 70%)',
-              border: '1px solid rgba(209,213,219,0.6)',
-            }}
-          >
-            {/* Vinyl */}
+          {/* Col izquierda — Tocadiscos */}
+          <div className="flex flex-col items-center justify-center gap-4 relative z-10">
+
+            {/* ══ PLINTH (base del tocadiscos) ══ */}
             <div
-              className="vinyl-disc relative cursor-pointer"
-              style={{ width: '280px', height: '280px' }}
+              className="relative cursor-pointer"
+              style={{
+                width: '340px',
+                borderRadius: '18px',
+                padding: '22px 24px 18px',
+                background: 'linear-gradient(160deg, #2C2C2E 0%, #1C1C1E 100%)',
+                boxShadow: '0 24px 64px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.07), inset 0 1px 0 rgba(255,255,255,0.08)',
+              }}
               onClick={() => setModalOpen(true)}
             >
-              <div
-                className="w-full h-full rounded-full"
-                style={{
-                  background: 'radial-gradient(circle at 32% 28%, #EF4444 0%, #B91C1C 45%, #7F1D1D 100%)',
-                  boxShadow: '0 0 0 2px rgba(220,38,38,0.6), 0 0 80px rgba(220,38,38,0.35), 0 20px 60px rgba(0,0,0,0.4)',
-                }}
-              >
-                {/* Groove rings */}
-                {[22, 34, 46, 57, 67, 76, 84, 91].map((pct, i) => (
-                  <div key={pct} className="absolute rounded-full" style={{
-                    top: `${pct / 2}%`, left: `${pct / 2}%`,
-                    width: `${100 - pct}%`, height: `${100 - pct}%`,
-                    border: `1px solid ${i % 2 === 0 ? 'rgba(255,255,255,0.18)' : 'rgba(255,200,200,0.12)'}`,
-                  }} />
-                ))}
-                {/* Highlight arc — simula reflejo de luz */}
-                <div className="absolute inset-0 rounded-full pointer-events-none" style={{
-                  background: 'radial-gradient(ellipse at 32% 22%, rgba(255,255,255,0.22) 0%, transparent 55%)',
+              {/* — Platter mat (círculo oscuro detrás del vinyl) — */}
+              <div className="relative mx-auto" style={{ width: '290px', height: '290px' }}>
+                <div
+                  className="absolute rounded-full"
+                  style={{
+                    inset: '-7px',
+                    background: 'radial-gradient(circle at 40% 35%, #3A3A3C, #111111)',
+                    boxShadow: 'inset 0 4px 16px rgba(0,0,0,0.95), 0 0 0 1px rgba(255,255,255,0.04)',
+                  }}
+                />
+
+                {/* — Vinyl disc — */}
+                <div
+                  className="vinyl-disc absolute inset-0"
+                  style={{ width: '290px', height: '290px' }}
+                >
+                  <div
+                    className="w-full h-full rounded-full"
+                    style={{
+                      background: 'radial-gradient(circle at 32% 28%, #EF4444 0%, #B91C1C 45%, #7F1D1D 100%)',
+                      boxShadow: '0 0 0 2px rgba(220,38,38,0.5), 0 0 40px rgba(220,38,38,0.25)',
+                    }}
+                  >
+                    {[22, 34, 46, 57, 67, 76, 84, 91].map((pct, i) => (
+                      <div key={pct} className="absolute rounded-full" style={{
+                        top: `${pct / 2}%`, left: `${pct / 2}%`,
+                        width: `${100 - pct}%`, height: `${100 - pct}%`,
+                        border: `1px solid ${i % 2 === 0 ? 'rgba(255,255,255,0.18)' : 'rgba(255,200,200,0.12)'}`,
+                      }} />
+                    ))}
+                    <div className="absolute inset-0 rounded-full pointer-events-none" style={{
+                      background: 'radial-gradient(ellipse at 32% 22%, rgba(255,255,255,0.22) 0%, transparent 55%)',
+                    }} />
+                  </div>
+                  {/* Center label */}
+                  <div
+                    className="vinyl-label absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full flex flex-col items-center justify-center"
+                    style={{
+                      width: '104px', height: '104px',
+                      background: 'linear-gradient(135deg, #F59E0B 0%, #B45309 100%)',
+                      boxShadow: '0 0 28px rgba(245,158,11,0.6)',
+                    }}
+                  >
+                    <span className="text-2xl mb-0.5">🎤</span>
+                    <span className="text-[0.6rem] font-black text-white uppercase tracking-[0.15em] leading-none">{T.vinyl}</span>
+                    <div className="absolute w-3 h-3 rounded-full bg-[#1C0800]" />
+                  </div>
+                </div>
+              </div>
+
+              {/* — Tonearm — */}
+              {/* Pivot base */}
+              <div className="absolute rounded-full" style={{
+                top: '26px', right: '30px',
+                width: '16px', height: '16px',
+                background: 'radial-gradient(circle at 35% 30%, #888, #3A3A3A)',
+                boxShadow: '0 2px 6px rgba(0,0,0,0.7), 0 0 0 2px #2A2A2A',
+              }} />
+              {/* Arm body */}
+              <div className="absolute" style={{
+                top: '32px', right: '37px',
+                width: '128px', height: '5px',
+                background: 'linear-gradient(90deg, #666 0%, #9A9A9A 50%, #777 100%)',
+                borderRadius: '3px',
+                transformOrigin: 'right center',
+                transform: 'rotate(30deg)',
+                boxShadow: '0 2px 5px rgba(0,0,0,0.6)',
+              }} />
+              {/* Headshell (parte delantera del brazo, más ancha) */}
+              <div className="absolute" style={{
+                top: '42px', right: '153px',
+                width: '18px', height: '9px',
+                background: 'linear-gradient(135deg, #888, #555)',
+                borderRadius: '3px 3px 2px 2px',
+                transform: 'rotate(30deg)',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.5)',
+              }} />
+              {/* Needle (punta roja) */}
+              <div className="absolute rounded-full" style={{
+                top: '49px', right: '157px',
+                width: '7px', height: '7px',
+                background: '#DC2626',
+                boxShadow: '0 0 8px rgba(220,38,38,0.7)',
+              }} />
+
+              {/* — Controls row — */}
+              <div className="flex items-center justify-between mt-4 px-1">
+                {/* Dots izquierda */}
+                <div className="flex gap-2 items-center">
+                  {[
+                    { bg: 'radial-gradient(circle at 35% 30%, #EF4444, #991B1B)', glow: '0 0 7px rgba(220,38,38,0.6)' },
+                    { bg: 'radial-gradient(circle at 35% 30%, #555, #333)',        glow: 'inset 0 1px 2px rgba(0,0,0,0.5)' },
+                    { bg: 'radial-gradient(circle at 35% 30%, #555, #333)',        glow: 'inset 0 1px 2px rgba(0,0,0,0.5)' },
+                  ].map((d, i) => (
+                    <div key={i} className="rounded-full" style={{
+                      width: i === 0 ? 10 : 7, height: i === 0 ? 10 : 7,
+                      background: d.bg, boxShadow: d.glow,
+                    }} />
+                  ))}
+                </div>
+                {/* Plaquita de marca */}
+                <span className="font-body text-[0.5rem] uppercase tracking-[0.18em]" style={{ color: 'rgba(255,255,255,0.2)' }}>
+                  PizzaDAO · Pro
+                </span>
+                {/* Dial grande derecha */}
+                <div className="rounded-full" style={{
+                  width: 20, height: 20,
+                  background: 'radial-gradient(circle at 35% 30%, #4A4A4A, #1E1E1E)',
+                  boxShadow: 'inset 0 2px 5px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.06)',
                 }} />
               </div>
-              {/* Center label — dorado para contrastar con el disco rojo */}
-              <div
-                className="vinyl-label absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full flex flex-col items-center justify-center"
-                style={{
-                  width: '104px', height: '104px',
-                  background: 'linear-gradient(135deg, #F59E0B 0%, #B45309 100%)',
-                  boxShadow: '0 0 28px rgba(245,158,11,0.6)',
-                }}
-              >
-                <span className="text-2xl mb-0.5">🎤</span>
-                <span className="text-[0.6rem] font-black text-white uppercase tracking-[0.15em] leading-none">{T.vinyl}</span>
-                <div className="absolute w-3 h-3 rounded-full bg-[#1C0800]" />
-              </div>
-            </div>
+
+            </div>{/* /plinth */}
 
             <p className="text-[0.7rem] font-body tracking-wide text-pizza-muted">
               {T.deadlineLabel} &nbsp;·&nbsp; {T.open}
