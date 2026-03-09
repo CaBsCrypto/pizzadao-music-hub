@@ -51,9 +51,9 @@ export const translations = {
       collabDesc:   'y su canción entra al catálogo oficial de PizzaDAO.',
       rulesTitle:   '📋 Bases del concurso',
       prizes: [
-        { medal: '🥇', place: '1er Lugar', desc: 'Mejor canción original en español', amount: '$500', coin: 'USDC', style: 'gold'   },
-        { medal: '🥈', place: '2do Lugar', desc: 'Segundo mejor track',               amount: '$300', coin: 'USDC', style: 'silver' },
-        { medal: '🥉', place: '3er Lugar', desc: 'Tercer mejor track',                amount: '$200', coin: 'USDC', style: 'bronze' },
+        { medal: '🥇', place: '1er Lugar', desc: 'Mejor canción original en español', amount: '$200', coin: 'USDC', style: 'gold'   },
+        { medal: '🥈', place: '2do Lugar', desc: 'Segundo mejor track',               amount: '$100', coin: 'USDC', style: 'silver' },
+        { medal: '🥉', place: '3er Lugar', desc: 'Tercer mejor track',                amount: '$50',  coin: 'USDC', style: 'bronze' },
       ],
       rules: [
         'La canción debe ser original y en idioma español',
@@ -158,9 +158,9 @@ export const translations = {
       collabDesc:   'and their song enters the official PizzaDAO catalog.',
       rulesTitle:   '📋 Contest Rules',
       prizes: [
-        { medal: '🥇', place: '1st Place', desc: 'Best original song in Spanish', amount: '$500', coin: 'USDC', style: 'gold'   },
-        { medal: '🥈', place: '2nd Place', desc: 'Second best track',             amount: '$300', coin: 'USDC', style: 'silver' },
-        { medal: '🥉', place: '3rd Place', desc: 'Third best track',              amount: '$200', coin: 'USDC', style: 'bronze' },
+        { medal: '🥇', place: '1st Place', desc: 'Best original song in Spanish', amount: '$200', coin: 'USDC', style: 'gold'   },
+        { medal: '🥈', place: '2nd Place', desc: 'Second best track',             amount: '$100', coin: 'USDC', style: 'silver' },
+        { medal: '🥉', place: '3rd Place', desc: 'Third best track',              amount: '$50',  coin: 'USDC', style: 'bronze' },
       ],
       rules: [
         'The song must be original and in Spanish',

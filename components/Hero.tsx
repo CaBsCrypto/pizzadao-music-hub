@@ -170,7 +170,7 @@ export default function Hero() {
         <div className="flex justify-center gap-12 mt-12 pt-8" style={{ borderTop: '1px solid rgba(209,213,219,0.6)' }}>
           {[
             { num: '14',     label: T.statSongs  },
-            { num: '$1,500', label: T.statPrizes },
+            { num: '$350',   label: T.statPrizes },
             { num: '∞',      label: T.statPizzas },
           ].map(({ num, label }) => (
             <div key={label} className="text-center">
