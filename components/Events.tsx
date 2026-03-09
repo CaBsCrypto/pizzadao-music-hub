@@ -15,23 +15,31 @@ export default function Events() {
   };
 
   return (
-    <section id="eventos" className="py-10 bg-[#080503]">
+    <section id="eventos" className="py-10 bg-pizza-dark-bg relative overflow-hidden">
+      {/* Grid texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(255,104,32,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,104,32,0.5) 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+        }}
+      />
 
       {/* Frame decorativo */}
       <div
-        className="mx-6 md:mx-auto max-w-6xl rounded-2xl overflow-hidden"
+        className="mx-6 md:mx-auto max-w-6xl rounded-2xl overflow-hidden relative z-10"
         style={{
-          border: '1px solid rgba(201,162,39,0.22)',
-          background: '#120D07',
-          boxShadow: '0 0 40px rgba(201,162,39,0.05), inset 0 0 60px rgba(0,0,0,0.25)',
+          border: '1px solid rgba(255,104,32,0.25)',
+          background: '#FFFFFF',
+          boxShadow: '0 4px 60px rgba(0,0,0,0.4), 0 0 40px rgba(255,104,32,0.06)',
         }}
       >
         {/* Header row */}
-        <div className="flex items-center justify-between px-5 py-3 border-b border-[rgba(201,162,39,0.1)]">
+        <div className="flex items-center justify-between px-5 py-3 border-b border-[rgba(232,194,128,0.35)]">
           <div className="flex items-center gap-3">
             <h2
-              className="font-display italic text-pizza-cream leading-none"
-              style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)', textShadow: '0 0 40px rgba(201,162,39,0.12)' }}
+              className="font-display italic text-pizza-dark leading-none"
+              style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)' }}
             >
               📍 Eventos IRL
             </h2>
@@ -46,8 +54,8 @@ export default function Events() {
                   onClick={() => { setTab(key); scrollRef.current?.scrollTo({ left: 0 }); }}
                   className={`px-3 py-1 rounded-full font-body text-[0.65rem] uppercase tracking-[0.08em] cursor-pointer transition-all border ${
                     tab === key
-                      ? 'bg-pizza-gold border-pizza-gold text-pizza-dark font-bold'
-                      : 'bg-transparent border-[rgba(201,162,39,0.25)] text-[rgba(242,232,213,0.45)] hover:border-[rgba(201,162,39,0.5)] hover:text-pizza-gold'
+                      ? 'bg-pizza-orange border-pizza-orange text-white font-bold'
+                      : 'bg-transparent border-pizza-border text-pizza-muted hover:border-pizza-orange hover:text-pizza-orange'
                   }`}
                 >
                   {label}
@@ -60,12 +68,12 @@ export default function Events() {
           <div className="hidden md:flex gap-2">
             <button
               onClick={() => scroll('left')}
-              className="w-7 h-7 rounded-full border border-[rgba(201,162,39,0.3)] text-pizza-gold bg-transparent flex items-center justify-center text-xs transition-all hover:border-pizza-gold hover:bg-[rgba(201,162,39,0.08)] cursor-pointer"
+              className="w-7 h-7 rounded-full border border-pizza-border text-pizza-body bg-transparent flex items-center justify-center text-xs transition-all hover:border-pizza-orange hover:text-pizza-orange hover:bg-[rgba(255,104,32,0.08)] cursor-pointer"
               aria-label="Anterior"
             >←</button>
             <button
               onClick={() => scroll('right')}
-              className="w-7 h-7 rounded-full border border-[rgba(201,162,39,0.3)] text-pizza-gold bg-transparent flex items-center justify-center text-xs transition-all hover:border-pizza-gold hover:bg-[rgba(201,162,39,0.08)] cursor-pointer"
+              className="w-7 h-7 rounded-full border border-pizza-border text-pizza-body bg-transparent flex items-center justify-center text-xs transition-all hover:border-pizza-orange hover:text-pizza-orange hover:bg-[rgba(255,104,32,0.08)] cursor-pointer"
               aria-label="Siguiente"
             >→</button>
           </div>
@@ -88,28 +96,28 @@ export default function Events() {
             {filtered.map((event) => (
               <div
                 key={event.id}
-                className="rounded-xl overflow-hidden border border-[#2E1E0E] transition-all duration-300 cursor-pointer group hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(201,162,39,0.1)] flex-shrink-0"
+                className="rounded-xl overflow-hidden border border-pizza-border transition-all duration-300 cursor-pointer group hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(255,104,32,0.12)] hover:border-pizza-orange flex-shrink-0"
                 style={{
                   width: '200px',
                   scrollSnapAlign: 'start',
-                  background: '#1A1208',
-                  filter: event.status === 'past' ? 'grayscale(0.4) brightness(0.85)' : 'none',
+                  background: '#FFFFFF',
+                  filter: event.status === 'past' ? 'grayscale(0.3) brightness(0.97)' : 'none',
                 }}
               >
                 {/* Cover */}
                 <div
                   className={`h-[110px] flex items-center justify-center relative overflow-hidden ${
                     event.status === 'upcoming'
-                      ? 'bg-gradient-to-br from-[#1A1208] to-[#221810]'
-                      : 'bg-gradient-to-br from-[#100B05] to-[#1A1208]'
+                      ? 'bg-gradient-to-br from-pizza-raised to-[#FFE4BB]'
+                      : 'bg-gradient-to-br from-pizza-bg to-pizza-raised'
                   }`}
                 >
                   <span className="text-5xl">{event.countryFlag}</span>
                   <div
                     className={`absolute top-2 right-2 px-2 py-0.5 rounded-[12px] text-[0.6rem] font-body font-extrabold uppercase tracking-[0.08em] ${
                       event.status === 'upcoming'
-                        ? 'bg-pizza-gold text-pizza-dark'
-                        : 'bg-[#2E1E0E] text-[rgba(242,232,213,0.5)]'
+                        ? 'bg-pizza-orange text-white'
+                        : 'bg-pizza-raised text-pizza-muted'
                     }`}
                   >
                     {event.status === 'upcoming' ? 'Próximo' : 'Pasado'}
@@ -119,13 +127,13 @@ export default function Events() {
                 {/* Info */}
                 <div className="p-2.5">
                   <div
-                    className="font-display italic text-pizza-cream text-[0.82rem] mb-1 leading-snug"
+                    className="font-display italic text-pizza-dark text-[0.82rem] mb-1 leading-snug"
                     style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' } as React.CSSProperties}
                   >{event.title}</div>
-                  <div className="text-[0.65rem] text-pizza-gold opacity-80 font-body mb-0.5 truncate">
+                  <div className="text-[0.65rem] text-pizza-orange font-body mb-0.5 truncate">
                     📍 {event.city}, {event.country}
                   </div>
-                  <div className="text-[0.65rem] text-[rgba(242,232,213,0.4)] font-body">
+                  <div className="text-[0.65rem] text-pizza-muted font-body">
                     📅 {event.date}
                   </div>
                 </div>
@@ -135,11 +143,11 @@ export default function Events() {
         </div>
 
         {/* Footer row */}
-        <div className="flex items-center justify-between px-5 py-2 border-t border-[rgba(201,162,39,0.08)]">
-          <span className="text-[0.6rem] text-[rgba(201,162,39,0.35)] font-body uppercase tracking-[0.15em]">
+        <div className="flex items-center justify-between px-5 py-2 border-t border-[rgba(232,194,128,0.25)]">
+          <span className="text-[0.6rem] text-pizza-muted font-body uppercase tracking-[0.15em]">
             PizzaDAO · Eventos Web3 · LATAM & Global
           </span>
-          <span className="text-[0.6rem] text-[rgba(201,162,39,0.25)] font-body uppercase tracking-[0.1em]">
+          <span className="text-[0.6rem] text-pizza-muted opacity-70 font-body uppercase tracking-[0.1em]">
             {filtered.length} eventos
           </span>
         </div>

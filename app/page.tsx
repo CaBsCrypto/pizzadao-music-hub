@@ -11,17 +11,17 @@ function PartnerBanner() {
   return (
     <div
       id="partners"
-      className="border-t border-b border-[rgba(201,162,39,0.15)] py-8 px-8 text-center bg-[#100C06]"
+      className="border-t border-b border-[rgba(200,130,0,0.2)] py-8 px-8 text-center bg-pizza-raised"
     >
-      <p className="text-[0.65rem] uppercase tracking-[0.3em] text-[rgba(242,232,213,0.3)] mb-6 font-body">
+      <p className="text-[0.65rem] uppercase tracking-[0.3em] text-pizza-muted mb-6 font-body">
         En colaboración con
       </p>
       <div className="flex items-center justify-center gap-12 flex-wrap">
-        <div className="font-accent text-[1.1rem] text-[rgba(242,232,213,0.45)] flex items-center gap-2.5 hover:text-pizza-gold transition-colors tracking-wide">
+        <div className="font-accent text-[1.1rem] text-pizza-body flex items-center gap-2.5 hover:text-pizza-orange transition-colors tracking-wide">
           🍕 PizzaDAO
         </div>
-        <div className="text-[0.65rem] text-pizza-gold opacity-30 px-4 tracking-widest">×</div>
-        <div className="font-accent text-[1.1rem] text-[rgba(242,232,213,0.45)] flex items-center gap-2.5 hover:text-pizza-gold transition-colors tracking-wide">
+        <div className="text-[0.65rem] text-pizza-gold opacity-50 px-4 tracking-widest">×</div>
+        <div className="font-accent text-[1.1rem] text-pizza-body flex items-center gap-2.5 hover:text-pizza-orange transition-colors tracking-wide">
           🎵 Música Web3
         </div>
       </div>

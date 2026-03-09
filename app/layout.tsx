@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${fredoka.variable} ${playfairDisplay.variable} ${nunito.variable} font-body antialiased bg-pizza-dark text-pizza-cream overflow-x-hidden`}
+        className={`${fredoka.variable} ${playfairDisplay.variable} ${nunito.variable} font-body antialiased bg-pizza-bg text-pizza-body overflow-x-hidden`}
       >
         {children}
       </body>
