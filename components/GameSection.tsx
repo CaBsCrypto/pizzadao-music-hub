@@ -14,7 +14,7 @@ export default function GameSection() {
         className="absolute inset-0 pointer-events-none opacity-[0.06]"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(255,104,32,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,104,32,0.5) 1px, transparent 1px)',
+            'linear-gradient(rgba(74,127,193,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(74,127,193,0.4) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }}
       />
@@ -22,16 +22,16 @@ export default function GameSection() {
       <div className="relative z-10 flex flex-col items-center">
         {/* Section header */}
         <div className="text-center mb-10">
-          <div className="inline-block bg-transparent border border-[rgba(255,104,32,0.5)] text-pizza-orange text-xs font-body font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-[20px] mb-4">
+          <div className="inline-block bg-transparent border border-[rgba(220,38,38,0.5)] text-pizza-red text-xs font-body font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-[20px] mb-4">
             {T.badge}
           </div>
           <h2
             className="font-display italic text-pizza-cream mb-2"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', textShadow: '0 0 40px rgba(255,104,32,0.2)' }}
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', textShadow: '0 0 40px rgba(220,38,38,0.15)' }}
           >
-            Rhythm <span className="text-pizza-orange">Slice</span>
+            Rhythm <span className="text-pizza-red">Slice</span>
           </h2>
-          <p className="font-body text-[0.85rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(255,104,32,0.75)' }}>
+          <p className="font-body text-[0.85rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(220,38,38,0.75)' }}>
             Guitar Hero × PizzaDAO
           </p>
         </div>
@@ -40,9 +40,9 @@ export default function GameSection() {
         <div
           className="w-full max-w-4xl rounded-2xl overflow-hidden"
           style={{
-            border: '1px solid rgba(255,104,32,0.3)',
-            background: '#1C0800',
-            boxShadow: '0 0 60px rgba(255,104,32,0.08), 0 30px 80px rgba(28,8,0,0.7)',
+            border: '1px solid rgba(74,127,193,0.3)',
+            background: '#1E3A5F',
+            boxShadow: '0 0 60px rgba(30,58,95,0.3), 0 30px 80px rgba(0,0,0,0.4)',
             height: '600px',
           }}
         >
@@ -54,7 +54,7 @@ export default function GameSection() {
           />
         </div>
 
-        <p className="mt-6 text-[0.8rem] font-body text-center max-w-[400px] leading-relaxed tracking-[0.03em]" style={{ color: 'rgba(255,240,220,0.5)' }}>
+        <p className="mt-6 text-[0.8rem] font-body text-center max-w-[400px] leading-relaxed tracking-[0.03em]" style={{ color: 'rgba(200,233,255,0.6)' }}>
           {T.description}
         </p>
       </div>

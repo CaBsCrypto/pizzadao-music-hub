@@ -9,26 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Light surfaces (content sections)
-        "pizza-bg":           "#FFF7EE",
+        // Sky blue backgrounds
+        "pizza-bg":           "#C8E9FF",
+        "pizza-sky-mid":      "#A8D4EA",
         "pizza-surface":      "#FFFFFF",
-        "pizza-raised":       "#FFF1DC",
-        "pizza-border":       "#E8C280",
-        // Text
-        "pizza-dark":         "#1C0800",
-        "pizza-body":         "#6B3810",
-        "pizza-muted":        "#A06840",
-        "pizza-cream":        "#FFF7EE",
-        // Dark section surfaces (Hero, GameSection, Footer)
-        "pizza-dark-bg":      "#2A0E04",
-        "pizza-dark-surface": "#3D1A0A",
-        "pizza-dark-border":  "#5C2E10",
-        // Brand colors
-        "pizza-red":          "#E8240A",
-        "pizza-orange":       "#FF6820",
-        "pizza-gold":         "#C9A227",
-        "pizza-yellow":       "#FFD740",
-        "pizza-green":        "#2D8A4E",
+        "pizza-raised":       "#F0F8FF",
+        "pizza-border":       "#D1D5DB",
+        // Text (dark on light)
+        "pizza-dark":         "#111827",
+        "pizza-body":         "#374151",
+        "pizza-muted":        "#6B7280",
+        "pizza-cream":        "#FFFFFF",
+        // Dark sections (Game + Footer → navy blue)
+        "pizza-dark-bg":      "#1E3A5F",
+        "pizza-dark-surface": "#2D5282",
+        "pizza-dark-border":  "#4A7FC1",
+        // Brand accents — RED is primary
+        "pizza-red":          "#DC2626",
+        "pizza-red-hover":    "#B91C1C",
+        "pizza-orange":       "#F97316",
+        "pizza-gold":         "#F59E0B",
+        "pizza-yellow":       "#FCD34D",
+        "pizza-green":        "#16A34A",
       },
       fontFamily: {
         display:  ["var(--font-playfair)", "Georgia", "serif"],
@@ -49,8 +51,8 @@ const config: Config = {
           "50%":      { transform: "translateY(-20px) rotate(5deg)" },
         },
         "pulse-badge": {
-          "0%, 100%": { boxShadow: "0 0 0 0 rgba(232,36,10,0.3)" },
-          "50%":      { boxShadow: "0 0 0 8px rgba(232,36,10,0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(220,38,38,0.3)" },
+          "50%":      { boxShadow: "0 0 0 8px rgba(220,38,38,0)" },
         },
         fadeUp: {
           from: { opacity: "0", transform: "translateY(30px)" },

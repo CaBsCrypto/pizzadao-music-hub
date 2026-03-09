@@ -11,8 +11,9 @@
 
   body {
     font-family: var(--font-nunito), sans-serif;
-    background-color: #FFF7EE;
-    color: #6B3810;
+    background: linear-gradient(180deg, #D4EDFA 0%, #A8D4EA 60%, #C8E9FF 100%);
+    background-attachment: fixed;
+    color: #374151;
     overflow-x: hidden;
   }
 
@@ -27,10 +28,10 @@
     opacity: 0.12;
   }
 
-  /* Custom scrollbar — orange */
+  /* Custom scrollbar — red */
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #FFF7EE; }
-  ::-webkit-scrollbar-thumb { background: #FF6820; border-radius: 3px; }
+  ::-webkit-scrollbar-track { background: #A8D4EA; }
+  ::-webkit-scrollbar-thumb { background: #DC2626; border-radius: 3px; }
 }
 
 @layer utilities {

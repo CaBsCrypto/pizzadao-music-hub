@@ -52,26 +52,26 @@ export default function Contest() {
       {modalOpen && (
         <div
           className="fixed inset-0 z-[1000] flex items-center justify-center p-4"
-          style={{ background: 'rgba(28,8,0,0.88)', backdropFilter: 'blur(6px)' }}
+          style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(6px)' }}
           onClick={(e) => { if (e.target === e.currentTarget) setModalOpen(false); }}
         >
           <div
             className="relative w-full max-w-lg rounded-2xl overflow-y-auto"
             style={{
-              background: '#FFF7EE',
-              border: '1px solid rgba(232,194,128,0.5)',
-              boxShadow: '0 0 80px rgba(255,104,32,0.1), 0 40px 80px rgba(28,8,0,0.4)',
+              background: '#FFFFFF',
+              border: '1px solid rgba(209,213,219,0.8)',
+              boxShadow: '0 0 60px rgba(0,0,0,0.15), 0 40px 80px rgba(0,0,0,0.2)',
               maxHeight: '90vh',
             }}
           >
-            <div className="flex items-center justify-between px-8 pt-7 pb-4 border-b border-[rgba(232,194,128,0.3)]">
+            <div className="flex items-center justify-between px-8 pt-7 pb-4 border-b border-pizza-border">
               <div>
-                <div className="font-display italic text-[1.5rem] text-pizza-orange leading-tight">{T.modal.title}</div>
+                <div className="font-display italic text-[1.5rem] text-pizza-red leading-tight">{T.modal.title}</div>
                 <div className="text-[0.8rem] text-pizza-muted font-body mt-0.5">{T.modal.subtitle}</div>
               </div>
               <button
                 onClick={() => setModalOpen(false)}
-                className="w-8 h-8 rounded-full border border-pizza-border text-pizza-body flex items-center justify-center text-sm hover:border-pizza-orange hover:text-pizza-orange bg-transparent cursor-pointer transition-all"
+                className="w-8 h-8 rounded-full border border-pizza-border text-pizza-body flex items-center justify-center text-sm hover:border-pizza-red hover:text-pizza-red bg-transparent cursor-pointer transition-all"
               >✕</button>
             </div>
             <form onSubmit={handleSubmit} className="px-8 py-6 space-y-4">
@@ -83,7 +83,7 @@ export default function Contest() {
                     value={form[key as keyof typeof form]}
                     onChange={(e) => setForm({ ...form, [key]: e.target.value })}
                     placeholder={placeholder}
-                    className="w-full bg-pizza-raised border border-pizza-border rounded-lg px-4 py-2.5 text-pizza-dark font-body text-[0.9rem] focus:outline-none focus:border-pizza-orange transition-colors placeholder-pizza-muted"
+                    className="w-full bg-pizza-raised border border-pizza-border rounded-lg px-4 py-2.5 text-pizza-dark font-body text-[0.9rem] focus:outline-none focus:border-pizza-red transition-colors placeholder-pizza-muted"
                   />
                 </div>
               ))}
@@ -92,7 +92,7 @@ export default function Contest() {
                 <select
                   value={form.country}
                   onChange={(e) => setForm({ ...form, country: e.target.value })}
-                  className="w-full bg-pizza-raised border border-pizza-border rounded-lg px-4 py-2.5 text-pizza-dark font-body text-[0.9rem] focus:outline-none focus:border-pizza-orange transition-colors cursor-pointer"
+                  className="w-full bg-pizza-raised border border-pizza-border rounded-lg px-4 py-2.5 text-pizza-dark font-body text-[0.9rem] focus:outline-none focus:border-pizza-red transition-colors cursor-pointer"
                 >
                   <option value="" disabled className="bg-white">{T.modal.countryPlaceholder}</option>
                   {countries.map((c) => <option key={c} value={c} className="bg-white">{c}</option>)}
@@ -100,7 +100,7 @@ export default function Contest() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-pizza-orange text-white py-3.5 rounded-full font-accent text-lg border-none cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(255,104,32,0.4)] shadow-[0_4px_20px_rgba(255,104,32,0.25)] mt-2"
+                className="w-full bg-pizza-red text-white py-3.5 rounded-full font-accent text-lg border-none cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(220,38,38,0.4)] shadow-[0_4px_20px_rgba(220,38,38,0.25)] mt-2"
               >{T.modal.submitBtn}</button>
             </form>
           </div>
@@ -108,27 +108,27 @@ export default function Contest() {
       )}
 
       {/* ── Section ── */}
-      <section id="concurso" className="py-20 px-6 relative overflow-hidden bg-pizza-dark-bg">
+      <section id="concurso" className="py-20 px-6 relative overflow-hidden bg-pizza-sky-mid">
 
         {/* Background texture */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.05]" style={{
-          backgroundImage: 'linear-gradient(rgba(255,104,32,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,104,32,0.5) 1px, transparent 1px)',
+        <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{
+          backgroundImage: 'linear-gradient(rgba(148,163,184,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.4) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }} />
-        <div className="absolute text-[28rem] opacity-[0.04] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">🍕</div>
+        <div className="absolute text-[28rem] opacity-[0.06] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">🍕</div>
 
         {/* ── ZONA 1: Header ── */}
         <div className="text-center mb-14 relative z-10">
-          <div className="inline-block bg-transparent border border-pizza-orange text-pizza-orange text-xs font-body font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-[20px] mb-4">
+          <div className="inline-block bg-transparent border border-pizza-red text-pizza-red text-xs font-body font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-[20px] mb-4">
             {T.badge}
           </div>
           <h2
-            className="font-display italic text-pizza-cream mb-3"
-            style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', textShadow: '0 0 40px rgba(255,104,32,0.2)' }}
+            className="font-display italic text-pizza-dark mb-3"
+            style={{ fontSize: 'clamp(2rem,5vw,3.5rem)' }}
           >
             {T.title}
           </h2>
-          <p className="max-w-[560px] mx-auto leading-[1.8] font-body text-[0.9rem]" style={{ color: 'rgba(255,240,220,0.7)' }}>
+          <p className="max-w-[560px] mx-auto leading-[1.8] font-body text-[0.9rem] text-pizza-muted">
             {T.description}
           </p>
         </div>
@@ -140,8 +140,8 @@ export default function Contest() {
           <div
             className="flex flex-col items-center justify-center gap-6 rounded-2xl py-10"
             style={{
-              background: 'radial-gradient(ellipse at center, rgba(255,104,32,0.12) 0%, transparent 70%)',
-              border: '1px solid rgba(255,104,32,0.25)',
+              background: 'radial-gradient(ellipse at center, rgba(220,38,38,0.08) 0%, transparent 70%)',
+              border: '1px solid rgba(209,213,219,0.6)',
             }}
           >
             {/* Vinyl */}
@@ -153,8 +153,8 @@ export default function Contest() {
               <div
                 className="w-full h-full rounded-full"
                 style={{
-                  background: 'radial-gradient(circle at 35% 35%, #4A1E08, #1C0800 65%)',
-                  boxShadow: '0 0 0 1px rgba(255,104,32,0.25), 0 0 70px rgba(255,104,32,0.12), 0 16px 50px rgba(28,8,0,0.6)',
+                  background: 'radial-gradient(circle at 35% 35%, #2D5282, #1E3A5F 65%)',
+                  boxShadow: '0 0 0 1px rgba(220,38,38,0.25), 0 0 60px rgba(220,38,38,0.1), 0 16px 50px rgba(0,0,0,0.3)',
                 }}
               >
                 {/* Groove rings */}
@@ -162,7 +162,7 @@ export default function Contest() {
                   <div key={pct} className="absolute rounded-full" style={{
                     top: `${pct / 2}%`, left: `${pct / 2}%`,
                     width: `${100 - pct}%`, height: `${100 - pct}%`,
-                    border: '1px solid rgba(255,104,32,0.08)',
+                    border: '1px solid rgba(220,38,38,0.1)',
                   }} />
                 ))}
               </div>
@@ -171,8 +171,8 @@ export default function Contest() {
                 className="vinyl-label absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full flex flex-col items-center justify-center"
                 style={{
                   width: '104px', height: '104px',
-                  background: 'linear-gradient(135deg, #FF6820 0%, #C13A00 100%)',
-                  boxShadow: '0 0 28px rgba(255,104,32,0.6)',
+                  background: 'linear-gradient(135deg, #DC2626 0%, #991B1B 100%)',
+                  boxShadow: '0 0 28px rgba(220,38,38,0.5)',
                 }}
               >
                 <span className="text-2xl mb-0.5">🎤</span>
@@ -181,21 +181,21 @@ export default function Contest() {
               </div>
             </div>
 
-            <p className="text-[0.7rem] font-body tracking-wide" style={{ color: 'rgba(255,240,220,0.5)' }}>
+            <p className="text-[0.7rem] font-body tracking-wide text-pizza-muted">
               {T.deadlineLabel} &nbsp;·&nbsp; {T.open}
             </p>
           </div>
 
           {/* Col derecha — Premios */}
           <div>
-            <h3 className="font-display italic text-[1.5rem] text-pizza-cream mb-5 tracking-wide">{T.prizesTitle}</h3>
+            <h3 className="font-display italic text-[1.5rem] text-pizza-dark mb-5 tracking-wide">{T.prizesTitle}</h3>
             {T.prizes.map((p) => {
               const s = prizeStyles[p.style];
               return (
                 <div
                   key={p.place}
                   className="rounded-xl py-4 px-5 mb-3 flex items-center gap-4 border transition-all duration-300 relative overflow-hidden hover:-translate-y-0.5"
-                  style={{ background: '#FFF7EE', borderColor: s.border, boxShadow: s.shadow }}
+                  style={{ background: '#FFFFFF', borderColor: s.border, boxShadow: s.shadow }}
                 >
                   <div className="absolute inset-0 opacity-[0.04]" style={{
                     background: `radial-gradient(ellipse at left, ${s.glow} 0%, transparent 60%)`,
@@ -214,8 +214,8 @@ export default function Contest() {
             })}
             {/* Collab note */}
             <div className="mt-4 px-1">
-              <p className="text-[0.8rem] leading-relaxed font-body" style={{ color: 'rgba(255,240,220,0.55)' }}>
-                🤝 <span style={{ color: 'rgba(255,240,220,0.8)' }}>{T.collab}</span> {T.collabDesc}
+              <p className="text-[0.8rem] leading-relaxed font-body text-pizza-muted">
+                🤝 <span className="text-pizza-body">{T.collab}</span> {T.collabDesc}
               </p>
             </div>
           </div>
@@ -225,14 +225,14 @@ export default function Contest() {
         <div
           className="max-w-[1100px] mx-auto rounded-2xl overflow-hidden relative z-10"
           style={{
-            border: '1px solid rgba(255,104,32,0.2)',
-            background: '#FFF7EE',
-            boxShadow: '0 4px 60px rgba(0,0,0,0.4), 0 0 30px rgba(255,104,32,0.06)',
+            border: '1px solid rgba(209,213,219,0.8)',
+            background: '#FFFFFF',
+            boxShadow: '0 4px 40px rgba(0,0,0,0.08)',
           }}
         >
           {/* Header row */}
-          <div className="flex items-center justify-between px-6 py-3 border-b border-[rgba(232,194,128,0.35)]">
-            <span className="font-display italic text-pizza-orange text-[1.05rem] tracking-wide">{T.rulesTitle}</span>
+          <div className="flex items-center justify-between px-6 py-3 border-b border-pizza-border">
+            <span className="font-display italic text-pizza-red text-[1.05rem] tracking-wide">{T.rulesTitle}</span>
             <span className="text-[0.65rem] text-pizza-muted font-body uppercase tracking-[0.15em]">{T.rules.length} {lang === 'es' ? 'condiciones' : 'conditions'}</span>
           </div>
           {/* Rules 2-col grid */}
@@ -241,21 +241,21 @@ export default function Contest() {
               <div
                 key={i}
                 className="flex items-start gap-2.5 py-2.5 font-body text-[0.83rem] text-pizza-body"
-                style={{ borderBottom: i < T.rules.length - 2 ? '1px solid rgba(232,194,128,0.2)' : 'none' }}
+                style={{ borderBottom: i < T.rules.length - 2 ? '1px solid rgba(209,213,219,0.4)' : 'none' }}
               >
-                <span className="text-pizza-orange opacity-60 text-[0.65rem] mt-0.5 flex-shrink-0">🍕</span>
+                <span className="text-pizza-red opacity-60 text-[0.65rem] mt-0.5 flex-shrink-0">🍕</span>
                 {rule}
               </div>
             ))}
           </div>
           {/* Footer row */}
-          <div className="flex items-center justify-between px-6 py-2.5 border-t border-[rgba(232,194,128,0.25)]">
+          <div className="flex items-center justify-between px-6 py-2.5 border-t border-pizza-border">
             <span className="text-[0.6rem] text-pizza-muted font-body uppercase tracking-[0.15em]">
               PizzaDAO Music Contest · 2026
             </span>
             <span
               className="text-[0.65rem] font-black uppercase tracking-[0.2em] px-2.5 py-1 rounded-md"
-              style={{ background: 'rgba(255,104,32,0.1)', color: '#FF6820', border: '1px solid rgba(255,104,32,0.3)' }}
+              style={{ background: 'rgba(220,38,38,0.08)', color: '#DC2626', border: '1px solid rgba(220,38,38,0.25)' }}
             >
               CC0
             </span>

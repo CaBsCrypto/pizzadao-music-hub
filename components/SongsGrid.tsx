@@ -21,12 +21,12 @@ export default function SongsGrid() {
   return (
     <div>
     {selectedSong && <VideoModal song={selectedSong} onClose={() => setSelectedSong(null)} />}
-    <section id="canciones" className="py-10 bg-pizza-dark-bg relative overflow-hidden">
+    <section id="canciones" className="py-10 bg-pizza-bg relative overflow-hidden">
       {/* Grid texture */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        className="absolute inset-0 pointer-events-none opacity-[0.06]"
         style={{
-          backgroundImage: 'linear-gradient(rgba(255,104,32,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,104,32,0.5) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(148,163,184,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.4) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }}
       />
@@ -35,13 +35,13 @@ export default function SongsGrid() {
       <div
         className="mx-6 md:mx-auto max-w-6xl rounded-2xl overflow-hidden relative z-10"
         style={{
-          border: '1px solid rgba(255,104,32,0.25)',
-          background: '#FFF7EE',
-          boxShadow: '0 4px 60px rgba(0,0,0,0.4), 0 0 40px rgba(255,104,32,0.06)',
+          border: '1px solid rgba(209,213,219,0.8)',
+          background: '#FFFFFF',
+          boxShadow: '0 4px 40px rgba(0,0,0,0.08), 0 0 1px rgba(0,0,0,0.04)',
         }}
       >
         {/* Header row */}
-        <div className="flex items-center justify-between px-5 py-3 border-b border-[rgba(232,194,128,0.35)]">
+        <div className="flex items-center justify-between px-5 py-3 border-b border-pizza-border">
           <div className="flex items-center gap-3">
             <h2
               className="font-display italic text-pizza-dark leading-none"
@@ -56,14 +56,14 @@ export default function SongsGrid() {
           <div className="hidden md:flex gap-2">
             <button
               onClick={() => scroll('left')}
-              className="w-7 h-7 rounded-full border border-pizza-border text-pizza-body bg-transparent flex items-center justify-center text-xs transition-all hover:border-pizza-orange hover:text-pizza-orange hover:bg-[rgba(255,104,32,0.08)] cursor-pointer"
+              className="w-7 h-7 rounded-full border border-pizza-border text-pizza-body bg-transparent flex items-center justify-center text-xs transition-all hover:border-pizza-red hover:text-pizza-red hover:bg-[rgba(220,38,38,0.08)] cursor-pointer"
               aria-label="Anterior"
             >
               ←
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-7 h-7 rounded-full border border-pizza-border text-pizza-body bg-transparent flex items-center justify-center text-xs transition-all hover:border-pizza-orange hover:text-pizza-orange hover:bg-[rgba(255,104,32,0.08)] cursor-pointer"
+              className="w-7 h-7 rounded-full border border-pizza-border text-pizza-body bg-transparent flex items-center justify-center text-xs transition-all hover:border-pizza-red hover:text-pizza-red hover:bg-[rgba(220,38,38,0.08)] cursor-pointer"
               aria-label="Siguiente"
             >
               →
@@ -89,13 +89,13 @@ export default function SongsGrid() {
               <div
                 key={song.id}
                 onClick={() => song.youtubeId && setSelectedSong(song)}
-                className="rounded-xl overflow-hidden border transition-all duration-300 cursor-pointer group hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(255,104,32,0.15)] flex-shrink-0"
+                className="rounded-xl overflow-hidden border transition-all duration-300 cursor-pointer group hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(220,38,38,0.12)] flex-shrink-0"
                 style={{
                   width: '180px',
                   scrollSnapAlign: 'start',
-                  background: '#FFF7EE',
-                  borderColor: song.lang === 'es' ? 'rgba(45,138,78,0.45)' : 'rgba(232,194,128,0.4)',
-                  boxShadow: song.lang === 'es' ? '0 0 16px rgba(45,138,78,0.1)' : '0 2px 8px rgba(107,56,16,0.06)',
+                  background: '#FFFFFF',
+                  borderColor: song.lang === 'es' ? 'rgba(22,163,74,0.4)' : 'rgba(209,213,219,0.8)',
+                  boxShadow: song.lang === 'es' ? '0 0 12px rgba(22,163,74,0.08)' : '0 2px 8px rgba(0,0,0,0.04)',
                 }}
               >
                 {/* Cover */}
@@ -108,7 +108,7 @@ export default function SongsGrid() {
 
                 {/* Info */}
                 <div className="p-2">
-                  <span className="font-body text-[0.55rem] text-pizza-orange uppercase tracking-[0.15em] mb-0.5 block opacity-80">
+                  <span className="font-body text-[0.55rem] text-pizza-red uppercase tracking-[0.15em] mb-0.5 block opacity-80">
                     #{String(index + 1).padStart(2, '0')}
                   </span>
                   <div
@@ -122,7 +122,7 @@ export default function SongsGrid() {
                         🇪🇸 ES
                       </span>
                     ) : (
-                      <span className="bg-[rgba(255,104,32,0.1)] text-pizza-orange text-[0.6rem] font-extrabold px-2 py-0.5 rounded-[8px] uppercase">
+                      <span className="bg-[rgba(220,38,38,0.1)] text-pizza-red text-[0.6rem] font-extrabold px-2 py-0.5 rounded-[8px] uppercase">
                         🇺🇸 EN
                       </span>
                     )}
@@ -135,7 +135,7 @@ export default function SongsGrid() {
         </div>
 
         {/* Footer row */}
-        <div className="flex items-center justify-between px-5 py-2 border-t border-[rgba(232,194,128,0.25)]">
+        <div className="flex items-center justify-between px-5 py-2 border-t border-pizza-border">
           <span className="text-[0.6rem] text-pizza-muted font-body uppercase tracking-[0.15em]">
             Rare Pizzas · Mixtape Volume 1 · 2022
           </span>

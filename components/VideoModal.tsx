@@ -22,28 +22,28 @@ export default function VideoModal({ song, onClose }: VideoModalProps) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: 'rgba(28,8,0,0.88)' }}
+      style={{ background: 'rgba(0,0,0,0.65)' }}
       onClick={onClose}
     >
       <div
         className="relative w-full max-w-3xl rounded-2xl overflow-hidden"
-        style={{ border: '1px solid rgba(232,194,128,0.5)', boxShadow: '0 0 60px rgba(255,104,32,0.15), 0 40px 80px rgba(28,8,0,0.5)' }}
+        style={{ border: '1px solid rgba(209,213,219,0.8)', boxShadow: '0 0 60px rgba(0,0,0,0.2), 0 40px 80px rgba(0,0,0,0.3)' }}
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
         <div
           className="flex items-center justify-between px-4 py-3"
-          style={{ background: '#FFFFFF', borderBottom: '1px solid rgba(232,194,128,0.35)' }}
+          style={{ background: '#FFFFFF', borderBottom: '1px solid rgba(209,213,219,0.5)' }}
         >
           <div>
-            <p className="font-body text-[0.6rem] text-pizza-orange uppercase tracking-[0.15em] opacity-80">
+            <p className="font-body text-[0.6rem] text-pizza-red uppercase tracking-[0.15em] opacity-80">
               #{String(song.id).padStart(2, '0')} · Rare Pizzas
             </p>
             <p className="font-display italic text-pizza-dark text-sm leading-tight">{song.title}</p>
           </div>
           <button
             onClick={onClose}
-            className="w-7 h-7 rounded-full flex items-center justify-center text-pizza-body border border-pizza-border hover:border-pizza-orange hover:text-pizza-orange hover:bg-[rgba(255,104,32,0.08)] transition-all cursor-pointer text-xs"
+            className="w-7 h-7 rounded-full flex items-center justify-center text-pizza-body border border-pizza-border hover:border-pizza-red hover:text-pizza-red hover:bg-[rgba(220,38,38,0.08)] transition-all cursor-pointer text-xs"
             aria-label="Cerrar"
           >
             ✕
