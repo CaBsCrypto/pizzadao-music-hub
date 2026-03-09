@@ -140,7 +140,7 @@ export default function Contest() {
           <div
             className="flex flex-col items-center justify-center gap-6 rounded-2xl py-10"
             style={{
-              background: 'radial-gradient(ellipse at center, rgba(220,38,38,0.08) 0%, transparent 70%)',
+              background: 'radial-gradient(ellipse at center, rgba(220,38,38,0.18) 0%, rgba(220,38,38,0.05) 50%, transparent 70%)',
               border: '1px solid rgba(209,213,219,0.6)',
             }}
           >
@@ -153,26 +153,30 @@ export default function Contest() {
               <div
                 className="w-full h-full rounded-full"
                 style={{
-                  background: 'radial-gradient(circle at 35% 35%, #2D5282, #1E3A5F 65%)',
-                  boxShadow: '0 0 0 1px rgba(220,38,38,0.25), 0 0 60px rgba(220,38,38,0.1), 0 16px 50px rgba(0,0,0,0.3)',
+                  background: 'radial-gradient(circle at 32% 28%, #EF4444 0%, #B91C1C 45%, #7F1D1D 100%)',
+                  boxShadow: '0 0 0 2px rgba(220,38,38,0.6), 0 0 80px rgba(220,38,38,0.35), 0 20px 60px rgba(0,0,0,0.4)',
                 }}
               >
                 {/* Groove rings */}
-                {[28, 42, 54, 65, 75, 84].map((pct) => (
+                {[22, 34, 46, 57, 67, 76, 84, 91].map((pct, i) => (
                   <div key={pct} className="absolute rounded-full" style={{
                     top: `${pct / 2}%`, left: `${pct / 2}%`,
                     width: `${100 - pct}%`, height: `${100 - pct}%`,
-                    border: '1px solid rgba(220,38,38,0.1)',
+                    border: `1px solid ${i % 2 === 0 ? 'rgba(255,255,255,0.18)' : 'rgba(255,200,200,0.12)'}`,
                   }} />
                 ))}
+                {/* Highlight arc — simula reflejo de luz */}
+                <div className="absolute inset-0 rounded-full pointer-events-none" style={{
+                  background: 'radial-gradient(ellipse at 32% 22%, rgba(255,255,255,0.22) 0%, transparent 55%)',
+                }} />
               </div>
-              {/* Center label */}
+              {/* Center label — dorado para contrastar con el disco rojo */}
               <div
                 className="vinyl-label absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full flex flex-col items-center justify-center"
                 style={{
                   width: '104px', height: '104px',
-                  background: 'linear-gradient(135deg, #DC2626 0%, #991B1B 100%)',
-                  boxShadow: '0 0 28px rgba(220,38,38,0.5)',
+                  background: 'linear-gradient(135deg, #F59E0B 0%, #B45309 100%)',
+                  boxShadow: '0 0 28px rgba(245,158,11,0.6)',
                 }}
               >
                 <span className="text-2xl mb-0.5">🎤</span>
