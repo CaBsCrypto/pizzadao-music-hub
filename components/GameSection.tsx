@@ -36,6 +36,31 @@ export default function GameSection() {
           </p>
         </div>
 
+        {/* Controls hint */}
+        <div className="flex items-center gap-3 mb-4 flex-wrap justify-center">
+          <span className="font-body text-[0.65rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(200,233,255,0.4)' }}>
+            Controles:
+          </span>
+          {['A', 'S', 'K', 'L'].map((key) => (
+            <kbd
+              key={key}
+              className="font-body font-bold text-[0.75rem] px-2.5 py-1 rounded-md"
+              style={{
+                background: 'rgba(255,255,255,0.07)',
+                border: '1px solid rgba(255,255,255,0.18)',
+                color: 'rgba(220,38,38,0.9)',
+                boxShadow: '0 2px 0 rgba(0,0,0,0.4)',
+                letterSpacing: '0.05em',
+              }}
+            >
+              {key}
+            </kbd>
+          ))}
+          <span className="font-body text-[0.65rem] uppercase tracking-[0.15em]" style={{ color: 'rgba(200,233,255,0.35)' }}>
+            — 4 carriles
+          </span>
+        </div>
+
         {/* Game iframe */}
         <div
           className="w-full max-w-4xl rounded-2xl overflow-hidden"
