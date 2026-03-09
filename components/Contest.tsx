@@ -253,7 +253,7 @@ export default function Contest() {
                 </div>
                 {/* Plaquita de marca */}
                 <span className="font-body text-[0.5rem] uppercase tracking-[0.18em]" style={{ color: 'rgba(255,255,255,0.2)' }}>
-                  PizzaDAO - W3
+                  PizzaDAO - MW3
                 </span>
                 {/* Dial grande derecha */}
                 <div className="rounded-full" style={{
