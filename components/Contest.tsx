@@ -58,7 +58,7 @@ export default function Contest() {
           <div
             className="relative w-full max-w-lg rounded-2xl overflow-y-auto"
             style={{
-              background: '#FFFFFF',
+              background: '#F0F8FF',
               border: '1px solid rgba(209,213,219,0.8)',
               boxShadow: '0 0 60px rgba(0,0,0,0.15), 0 40px 80px rgba(0,0,0,0.2)',
               maxHeight: '90vh',

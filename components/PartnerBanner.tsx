@@ -10,7 +10,7 @@ export default function PartnerBanner() {
   return (
     <div
       id="partners"
-      className="border-t border-b border-pizza-border py-8 px-8 text-center bg-white"
+      className="border-t border-b border-pizza-border py-8 px-8 text-center bg-pizza-raised"
     >
       <p className="text-[0.65rem] uppercase tracking-[0.3em] text-pizza-muted mb-6 font-body">
         {T.collab}

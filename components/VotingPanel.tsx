@@ -56,7 +56,7 @@ export default function VotingPanel() {
         className="mx-6 md:mx-auto max-w-6xl rounded-2xl overflow-hidden relative z-10"
         style={{
           border: '1px solid rgba(209,213,219,0.8)',
-          background: '#FFFFFF',
+          background: '#F0F8FF',
           boxShadow: '0 4px 40px rgba(0,0,0,0.08)',
         }}
       >
@@ -96,12 +96,12 @@ export default function VotingPanel() {
           {/* Left fade */}
           <div
             className="absolute left-0 top-0 bottom-0 w-12 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to right, #FFFFFF, transparent)' }}
+            style={{ background: 'linear-gradient(to right, #F0F8FF, transparent)' }}
           />
           {/* Right fade */}
           <div
             className="absolute right-0 top-0 bottom-0 w-12 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to left, #FFFFFF, transparent)' }}
+            style={{ background: 'linear-gradient(to left, #F0F8FF, transparent)' }}
           />
 
           <div
@@ -123,7 +123,7 @@ export default function VotingPanel() {
                 style={{
                   width: '280px',
                   scrollSnapAlign: 'start',
-                  background: '#FFFFFF',
+                  background: '#F0F8FF',
                   borderColor: 'rgba(209,213,219,0.8)',
                 }}
               >
@@ -177,7 +177,7 @@ export default function VotingPanel() {
             {/* Placeholder CTA */}
             <div
               className="flex-shrink-0 border border-dashed border-pizza-border rounded-xl flex flex-col items-center justify-center text-center p-6 cursor-pointer transition-all duration-200 hover:border-pizza-red hover:bg-[rgba(220,38,38,0.04)] group/cta"
-              style={{ width: '200px', scrollSnapAlign: 'start', background: '#FFFFFF' }}
+              style={{ width: '200px', scrollSnapAlign: 'start', background: '#F0F8FF' }}
               onClick={() => window.dispatchEvent(new CustomEvent('openPostulationModal'))}
             >
               <div className="text-3xl mb-2 transition-transform duration-200 group-hover/cta:scale-110">🎤</div>

@@ -34,7 +34,7 @@ export default function Events() {
         className="mx-6 md:mx-auto max-w-6xl rounded-2xl overflow-hidden relative z-10"
         style={{
           border: '1px solid rgba(209,213,219,0.8)',
-          background: '#FFFFFF',
+          background: '#F0F8FF',
           boxShadow: '0 4px 40px rgba(0,0,0,0.08)',
         }}
       >
@@ -104,7 +104,7 @@ export default function Events() {
                 style={{
                   width: '200px',
                   scrollSnapAlign: 'start',
-                  background: '#FFFFFF',
+                  background: '#F0F8FF',
                   filter: event.status === 'past' ? 'grayscale(0.3) brightness(0.97)' : 'none',
                 }}
               >

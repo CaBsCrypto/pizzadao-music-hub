@@ -33,7 +33,7 @@ export default function VideoModal({ song, onClose }: VideoModalProps) {
         {/* Header */}
         <div
           className="flex items-center justify-between px-4 py-3"
-          style={{ background: '#FFFFFF', borderBottom: '1px solid rgba(209,213,219,0.5)' }}
+          style={{ background: '#F0F8FF', borderBottom: '1px solid rgba(209,213,219,0.5)' }}
         >
           <div>
             <p className="font-body text-[0.6rem] text-pizza-red uppercase tracking-[0.15em] opacity-80">
