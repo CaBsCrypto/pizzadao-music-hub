@@ -71,7 +71,7 @@ export default function Contest() {
           <div
             className="relative w-full max-w-lg rounded-2xl overflow-y-auto"
             style={{
-              background: '#FFFFFF',
+              background: '#FFF7EE',
               border: '1px solid rgba(232,194,128,0.5)',
               boxShadow: '0 0 80px rgba(255,104,32,0.1), 0 40px 80px rgba(28,8,0,0.4)',
               maxHeight: '90vh',
@@ -213,7 +213,7 @@ export default function Contest() {
                 <div
                   key={p.place}
                   className="rounded-xl py-4 px-5 mb-3 flex items-center gap-4 border transition-all duration-300 relative overflow-hidden hover:-translate-y-0.5"
-                  style={{ background: '#FFFFFF', borderColor: s.border, boxShadow: s.shadow }}
+                  style={{ background: '#FFF7EE', borderColor: s.border, boxShadow: s.shadow }}
                 >
                   <div className="absolute inset-0 opacity-[0.04]" style={{
                     background: `radial-gradient(ellipse at left, ${s.glow} 0%, transparent 60%)`,
@@ -244,7 +244,7 @@ export default function Contest() {
           className="max-w-[1100px] mx-auto rounded-2xl overflow-hidden relative z-10"
           style={{
             border: '1px solid rgba(255,104,32,0.2)',
-            background: '#FFFFFF',
+            background: '#FFF7EE',
             boxShadow: '0 4px 60px rgba(0,0,0,0.4), 0 0 30px rgba(255,104,32,0.06)',
           }}
         >

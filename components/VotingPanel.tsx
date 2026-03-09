@@ -52,7 +52,7 @@ export default function VotingPanel() {
         className="mx-6 md:mx-auto max-w-6xl rounded-2xl overflow-hidden relative z-10"
         style={{
           border: '1px solid rgba(255,255,255,0.35)',
-          background: '#FFFFFF',
+          background: '#FFF7EE',
           boxShadow: '0 8px 60px rgba(28,8,0,0.35), 0 0 40px rgba(255,255,255,0.1)',
         }}
       >
@@ -92,12 +92,12 @@ export default function VotingPanel() {
           {/* Left fade */}
           <div
             className="absolute left-0 top-0 bottom-0 w-12 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to right, #FFFFFF, transparent)' }}
+            style={{ background: 'linear-gradient(to right, #FFF7EE, transparent)' }}
           />
           {/* Right fade */}
           <div
             className="absolute right-0 top-0 bottom-0 w-12 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to left, #FFFFFF, transparent)' }}
+            style={{ background: 'linear-gradient(to left, #FFF7EE, transparent)' }}
           />
 
           <div
@@ -119,7 +119,7 @@ export default function VotingPanel() {
                 style={{
                   width: '280px',
                   scrollSnapAlign: 'start',
-                  background: '#FFFFFF',
+                  background: '#FFF7EE',
                   borderColor: 'rgba(232,194,128,0.4)',
                 }}
               >

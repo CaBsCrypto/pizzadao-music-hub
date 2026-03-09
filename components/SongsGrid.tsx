@@ -32,7 +32,7 @@ export default function SongsGrid() {
         className="mx-6 md:mx-auto max-w-6xl rounded-2xl overflow-hidden relative z-10"
         style={{
           border: '1px solid rgba(255,104,32,0.25)',
-          background: '#FFFFFF',
+          background: '#FFF7EE',
           boxShadow: '0 4px 60px rgba(0,0,0,0.4), 0 0 40px rgba(255,104,32,0.06)',
         }}
       >
@@ -89,7 +89,7 @@ export default function SongsGrid() {
                 style={{
                   width: '180px',
                   scrollSnapAlign: 'start',
-                  background: '#FFFFFF',
+                  background: '#FFF7EE',
                   borderColor: song.lang === 'es' ? 'rgba(45,138,78,0.45)' : 'rgba(232,194,128,0.4)',
                   boxShadow: song.lang === 'es' ? '0 0 16px rgba(45,138,78,0.1)' : '0 2px 8px rgba(107,56,16,0.06)',
                 }}
