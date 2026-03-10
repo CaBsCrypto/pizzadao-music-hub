@@ -20,20 +20,11 @@ export default function Events() {
 
   return (
     <section id="eventos" className="py-10 bg-pizza-sky-mid relative overflow-hidden">
-      {/* Grid texture */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.06]"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(139,107,74,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139,107,74,0.3) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }}
-      />
-
       {/* Frame decorativo */}
       <div
         className="mx-6 md:mx-auto max-w-6xl rounded-2xl overflow-hidden relative z-10"
         style={{
-          border: '1px solid rgba(209,213,219,0.8)',
+          border: '1px solid rgba(224,144,16,0.25)',
           background: '#FEFCF8',
           boxShadow: '0 4px 40px rgba(0,0,0,0.08)',
         }}
@@ -95,6 +86,7 @@ export default function Events() {
               msOverflowStyle: 'none',
               paddingLeft: '46px',
               paddingRight: '64px',
+              background: '#FEFCF8',
             }}
           >
             {filtered.map((event) => (

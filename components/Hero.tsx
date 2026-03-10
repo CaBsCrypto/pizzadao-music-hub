@@ -19,11 +19,7 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-[70px]"
       style={{
-        background: '#FFF8F0',
-        backgroundImage: `
-          repeating-linear-gradient(0deg, transparent 0px, transparent 29px, rgba(200,40,30,0.055) 29px, rgba(200,40,30,0.055) 30px),
-          repeating-linear-gradient(90deg, transparent 0px, transparent 29px, rgba(200,40,30,0.055) 29px, rgba(200,40,30,0.055) 30px)
-        `,
+        background: 'linear-gradient(160deg, #7A0000 0%, #C01010 50%, #E03030 100%)',
       }}
     >
       {/* Floating background emojis */}
@@ -104,10 +100,10 @@ export default function Hero() {
 
         {/* Title */}
         <h1
-          className="font-display italic leading-none text-pizza-dark mb-2"
+          className="font-display italic leading-none text-white mb-2"
           style={{
             fontSize: 'clamp(3rem, 8vw, 6rem)',
-            textShadow: '3px 3px 0 rgba(200,40,30,0.15)',
+            textShadow: '3px 3px 0 rgba(224,48,48,0.25)',
           }}
         >
           Pizza<span className="text-pizza-gold not-italic">DAO</span>
@@ -119,19 +115,19 @@ export default function Hero() {
         <div style={{
           width: 60, height: 4, borderRadius: 2,
           margin: '14px auto 6px',
-          background: 'linear-gradient(to right, #1A6B3A 33.3%, #FFF8F0 33.3% 66.6%, #C8281E 66.6%)',
+          background: 'linear-gradient(to right, #1A6B3A 33.3%, rgba(255,248,240,0.7) 33.3% 66.6%, #E03030 66.6%)',
         }} />
 
         {/* Subtitle */}
         <p
-          className="font-accent mb-6 uppercase tracking-[0.25em] text-pizza-body"
-          style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.95rem)' }}
+          className="font-accent mb-6 uppercase tracking-[0.25em]"
+          style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.95rem)', color: 'rgba(255,220,200,0.9)' }}
         >
           Eat · Vibe · Create
         </p>
 
         {/* Description */}
-        <p className="max-w-[540px] mx-auto mb-10 leading-[1.8] font-body text-[0.95rem] text-pizza-muted">
+        <p className="max-w-[540px] mx-auto mb-10 leading-[1.8] font-body text-[0.95rem]" style={{ color: 'rgba(240,208,192,0.8)' }}>
           {T.description}
         </p>
 
@@ -139,20 +135,21 @@ export default function Hero() {
         <div className="flex gap-4 justify-center flex-wrap">
           <button
             onClick={() => scrollTo('canciones')}
-            className="bg-pizza-red text-white px-8 py-3.5 rounded-full font-accent text-lg border-none cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(200,40,30,0.4)] flex items-center gap-2 shadow-[0_4px_20px_rgba(200,40,30,0.25)]"
+            className="bg-white text-pizza-red px-8 py-3.5 rounded-full font-accent text-lg border border-white cursor-pointer transition-all hover:-translate-y-1 hover:bg-pizza-red hover:text-white flex items-center gap-2 shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
           >
             {T.btn1}
           </button>
           <button
             onClick={() => scrollTo('concurso')}
-            className="bg-white text-pizza-body px-8 py-3.5 rounded-full font-accent text-lg cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] flex items-center gap-2 border border-pizza-border shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
+            className="px-8 py-3.5 rounded-full font-accent text-lg cursor-pointer transition-all hover:-translate-y-1 flex items-center gap-2"
+            style={{ background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}
           >
             {T.btn2}
           </button>
         </div>
 
         {/* Stats */}
-        <div className="flex justify-center gap-12 mt-12 pt-8" style={{ borderTop: '1px solid rgba(232,213,183,0.7)' }}>
+        <div className="flex justify-center gap-12 mt-12 pt-8" style={{ borderTop: '1px solid rgba(224,48,48,0.3)' }}>
           {[
             { num: '14',     label: T.statSongs  },
             { num: '$350',   label: T.statPrizes },
@@ -160,7 +157,7 @@ export default function Hero() {
           ].map(({ num, label }) => (
             <div key={label} className="text-center">
               <span className="font-display italic text-[2.2rem] font-bold text-pizza-red block">{num}</span>
-              <span className="text-[0.75rem] uppercase tracking-[0.15em] font-body text-pizza-muted">{label}</span>
+              <span className="text-[0.75rem] uppercase tracking-[0.15em] font-body" style={{ color: 'rgba(240,208,192,0.7)' }}>{label}</span>
             </div>
           ))}
         </div>

@@ -34,7 +34,7 @@ export default function Navbar() {
           <li key={id}>
             <button
               onClick={() => scrollTo(id)}
-              className="text-pizza-body font-body font-semibold text-sm uppercase tracking-[0.08em] px-2.5 py-1.5 rounded bg-transparent border-none cursor-pointer transition-colors hover:text-pizza-red hover:bg-[rgba(220,38,38,0.08)]"
+              className="text-pizza-body font-body font-semibold text-sm uppercase tracking-[0.08em] px-2.5 py-1.5 rounded bg-transparent border-none cursor-pointer transition-colors hover:text-pizza-red hover:bg-[rgba(224,48,48,0.08)]"
             >
               {label}
             </button>

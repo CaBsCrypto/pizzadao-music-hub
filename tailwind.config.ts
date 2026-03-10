@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Warm cream backgrounds — Italian pizzeria
+        // Festival V3 — cream sections, red hero/contest, dark footer
         "pizza-bg":           "#FFF8F0",
-        "pizza-sky-mid":      "#FDF3E4",
+        "pizza-sky-mid":      "#FFF0E0",
         "pizza-surface":      "#FFFFFF",
         "pizza-raised":       "#FEFCF8",
-        "pizza-border":       "#E8D5B7",
+        "pizza-border":       "#E8D0B0",
         // Text (warm dark on cream)
         "pizza-dark":         "#1A0A00",
         "pizza-body":         "#3D2B1F",
@@ -24,11 +24,11 @@ const config: Config = {
         "pizza-dark-bg":      "#3D0C0C",
         "pizza-dark-surface": "#5C1A1A",
         "pizza-dark-border":  "#8B3A3A",
-        // Brand accents — Italian RED is primary
-        "pizza-red":          "#C8281E",
-        "pizza-red-hover":    "#A01C14",
+        // Brand accents — vivid RED for dark bg
+        "pizza-red":          "#E03030",
+        "pizza-red-hover":    "#C02020",
         "pizza-orange":       "#E85D20",
-        "pizza-gold":         "#D4860A",
+        "pizza-gold":         "#E09010",
         "pizza-yellow":       "#F5C235",
         "pizza-green":        "#1A6B3A",
       },

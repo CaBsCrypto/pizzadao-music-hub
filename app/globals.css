@@ -11,7 +11,7 @@
 
   body {
     font-family: var(--font-nunito), sans-serif;
-    background: linear-gradient(180deg, #FFF8F0 0%, #FDF3E4 60%, #FFF8F0 100%);
+    background: #FFF8F0;
     background-attachment: fixed;
     color: #3D2B1F;
     overflow-x: hidden;
@@ -30,8 +30,8 @@
 
   /* Custom scrollbar — warm */
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #E8D5B7; }
-  ::-webkit-scrollbar-thumb { background: #C8281E; border-radius: 3px; }
+  ::-webkit-scrollbar-track { background: #E8D0B0; }
+  ::-webkit-scrollbar-thumb { background: #E03030; border-radius: 3px; }
 }
 
 @layer utilities {
