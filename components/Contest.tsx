@@ -190,7 +190,7 @@ export default function Contest() {
                     className="vinyl-label absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full flex flex-col items-center justify-between"
                     style={{
                       width: '104px', height: '104px',
-                      padding: '14px 0 12px',
+                      padding: '14px 0 18px',
                       background: 'linear-gradient(135deg, #F59E0B 0%, #B45309 100%)',
                       boxShadow: '0 0 28px rgba(245,158,11,0.6)',
                     }}
