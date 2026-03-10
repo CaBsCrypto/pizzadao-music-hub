@@ -14,7 +14,7 @@ export default function GameSection() {
         className="absolute inset-0 pointer-events-none opacity-[0.06]"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(74,127,193,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(74,127,193,0.4) 1px, transparent 1px)',
+            'linear-gradient(rgba(200,100,100,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(200,100,100,0.3) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }}
       />
@@ -46,7 +46,7 @@ export default function GameSection() {
         >
           {/* Keys row */}
           <div className="flex items-center gap-3 flex-wrap justify-center">
-            <span className="font-body text-[0.7rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(200,233,255,0.65)' }}>
+            <span className="font-body text-[0.7rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(255,220,200,0.65)' }}>
               Controles:
             </span>
             {['A', 'S', 'K', 'L'].map((key) => (
@@ -64,7 +64,7 @@ export default function GameSection() {
                 {key}
               </kbd>
             ))}
-            <span className="font-body text-[0.7rem] uppercase tracking-[0.15em]" style={{ color: 'rgba(200,233,255,0.5)' }}>
+            <span className="font-body text-[0.7rem] uppercase tracking-[0.15em]" style={{ color: 'rgba(255,220,200,0.5)' }}>
               — 4 carriles
             </span>
           </div>
@@ -84,9 +84,9 @@ export default function GameSection() {
         <div
           className="w-full max-w-4xl rounded-2xl overflow-hidden"
           style={{
-            border: '1px solid rgba(74,127,193,0.3)',
-            background: '#1E3A5F',
-            boxShadow: '0 0 60px rgba(30,58,95,0.3), 0 30px 80px rgba(0,0,0,0.4)',
+            border: '1px solid rgba(200,100,100,0.3)',
+            background: '#3D0C0C',
+            boxShadow: '0 0 60px rgba(61,12,12,0.4), 0 30px 80px rgba(0,0,0,0.4)',
             height: '600px',
           }}
         >
@@ -98,7 +98,7 @@ export default function GameSection() {
           />
         </div>
 
-        <p className="mt-6 text-[0.8rem] font-body text-center max-w-[400px] leading-relaxed tracking-[0.03em]" style={{ color: 'rgba(200,233,255,0.6)' }}>
+        <p className="mt-6 text-[0.8rem] font-body text-center max-w-[400px] leading-relaxed tracking-[0.03em]" style={{ color: 'rgba(255,220,200,0.6)' }}>
           {T.description}
         </p>
       </div>

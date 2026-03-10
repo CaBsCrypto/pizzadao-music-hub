@@ -58,7 +58,7 @@ export default function Contest() {
           <div
             className="relative w-full max-w-lg rounded-2xl overflow-y-auto"
             style={{
-              background: '#F0F8FF',
+              background: '#FEFCF8',
               border: '1px solid rgba(209,213,219,0.8)',
               boxShadow: '0 0 60px rgba(0,0,0,0.15), 0 40px 80px rgba(0,0,0,0.2)',
               maxHeight: '90vh',
@@ -108,13 +108,15 @@ export default function Contest() {
       )}
 
       {/* ── Section ── */}
-      <section id="concurso" className="py-20 px-6 relative overflow-hidden bg-pizza-sky-mid">
+      <section id="concurso" className="py-20 px-6 relative overflow-hidden" style={{
+        background: '#FDF3E4',
+        backgroundImage: `
+          repeating-linear-gradient(45deg, rgba(200,40,30,0.04) 0px, rgba(200,40,30,0.04) 1px, transparent 1px, transparent 14px),
+          repeating-linear-gradient(-45deg, rgba(200,40,30,0.04) 0px, rgba(200,40,30,0.04) 1px, transparent 1px, transparent 14px)
+        `,
+      }}>
 
-        {/* Background texture */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{
-          backgroundImage: 'linear-gradient(rgba(148,163,184,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.4) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }} />
+        {/* Background pizza watermark */}
         <div className="absolute text-[28rem] opacity-[0.06] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">🍕</div>
 
         {/* ── ZONA 1: Header ── */}
@@ -281,7 +283,7 @@ export default function Contest() {
                 <div
                   key={p.place}
                   className="rounded-xl py-4 px-5 mb-3 flex items-center gap-4 border transition-all duration-300 relative overflow-hidden hover:-translate-y-0.5"
-                  style={{ background: '#FFFFFF', borderColor: s.border, boxShadow: s.shadow }}
+                  style={{ background: '#FEFCF8', borderColor: s.border, boxShadow: s.shadow }}
                 >
                   <div className="absolute inset-0 opacity-[0.04]" style={{
                     background: `radial-gradient(ellipse at left, ${s.glow} 0%, transparent 60%)`,
@@ -312,7 +314,7 @@ export default function Contest() {
           className="max-w-[1100px] mx-auto rounded-2xl overflow-hidden relative z-10"
           style={{
             border: '1px solid rgba(209,213,219,0.8)',
-            background: '#FFFFFF',
+            background: '#FEFCF8',
             boxShadow: '0 4px 40px rgba(0,0,0,0.08)',
           }}
         >

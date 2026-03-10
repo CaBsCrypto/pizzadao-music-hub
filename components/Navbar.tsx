@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[999] bg-[rgba(255,255,255,0.96)] backdrop-blur-[10px] border-b border-[rgba(209,213,219,0.7)] px-8 flex items-center justify-between h-[70px] shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
+    <nav className="fixed top-0 left-0 right-0 z-[999] bg-[rgba(255,248,240,0.97)] backdrop-blur-[10px] border-b border-[rgba(232,213,183,0.8)] px-8 flex items-center justify-between h-[70px] shadow-[0_2px_20px_rgba(60,12,12,0.08)]">
       <button
         onClick={() => scrollTo('hero')}
         className="flex items-center gap-2.5 font-accent text-2xl text-pizza-dark bg-transparent border-none cursor-pointer"

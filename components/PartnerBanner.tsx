@@ -12,6 +12,7 @@ export default function PartnerBanner() {
       id="partners"
       className="border-t border-b border-pizza-border py-8 px-8 text-center bg-pizza-raised"
     >
+      <div style={{ width: 60, height: 4, borderRadius: 2, margin: '0 auto 16px', background: 'linear-gradient(to right, #1A6B3A 33.3%, #FFF8F0 33.3% 66.6%, #C8281E 66.6%)' }} />
       <p className="text-[0.65rem] uppercase tracking-[0.3em] text-pizza-muted mb-6 font-body">
         {T.collab}
       </p>

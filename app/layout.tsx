@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Fredoka, Playfair_Display, Nunito } from "next/font/google";
+import { Lora, Playfair_Display, Nunito } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 
-const fredoka = Fredoka({
-  weight: ["400", "600"],
+const lora = Lora({
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-fredoka",
 });
@@ -36,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${fredoka.variable} ${playfairDisplay.variable} ${nunito.variable} font-body antialiased bg-pizza-bg text-pizza-body overflow-x-hidden`}
+        className={`${lora.variable} ${playfairDisplay.variable} ${nunito.variable} font-body antialiased bg-pizza-bg text-pizza-body overflow-x-hidden`}
       >
         <LanguageProvider>{children}</LanguageProvider>
       </body>

@@ -9,28 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Sky blue backgrounds
-        "pizza-bg":           "#C8E9FF",
-        "pizza-sky-mid":      "#A8D4EA",
+        // Warm cream backgrounds — Italian pizzeria
+        "pizza-bg":           "#FFF8F0",
+        "pizza-sky-mid":      "#FDF3E4",
         "pizza-surface":      "#FFFFFF",
-        "pizza-raised":       "#F0F8FF",
-        "pizza-border":       "#D1D5DB",
-        // Text (dark on light)
-        "pizza-dark":         "#111827",
-        "pizza-body":         "#374151",
-        "pizza-muted":        "#6B7280",
-        "pizza-cream":        "#FFFFFF",
-        // Dark sections (Game + Footer → navy blue)
-        "pizza-dark-bg":      "#1E3A5F",
-        "pizza-dark-surface": "#2D5282",
-        "pizza-dark-border":  "#4A7FC1",
-        // Brand accents — RED is primary
-        "pizza-red":          "#DC2626",
-        "pizza-red-hover":    "#B91C1C",
-        "pizza-orange":       "#F97316",
-        "pizza-gold":         "#F59E0B",
-        "pizza-yellow":       "#FCD34D",
-        "pizza-green":        "#16A34A",
+        "pizza-raised":       "#FEFCF8",
+        "pizza-border":       "#E8D5B7",
+        // Text (warm dark on cream)
+        "pizza-dark":         "#1A0A00",
+        "pizza-body":         "#3D2B1F",
+        "pizza-muted":        "#8B6B4A",
+        "pizza-cream":        "#FFF8F0",
+        // Dark sections (Game + Footer → deep burgundy)
+        "pizza-dark-bg":      "#3D0C0C",
+        "pizza-dark-surface": "#5C1A1A",
+        "pizza-dark-border":  "#8B3A3A",
+        // Brand accents — Italian RED is primary
+        "pizza-red":          "#C8281E",
+        "pizza-red-hover":    "#A01C14",
+        "pizza-orange":       "#E85D20",
+        "pizza-gold":         "#D4860A",
+        "pizza-yellow":       "#F5C235",
+        "pizza-green":        "#1A6B3A",
       },
       fontFamily: {
         display:  ["var(--font-playfair)", "Georgia", "serif"],

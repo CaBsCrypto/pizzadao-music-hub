@@ -18,64 +18,41 @@ export default function Hero() {
     <section
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-[70px]"
-      style={{ background: 'linear-gradient(160deg, #D4EDFA 0%, #9DCDE8 40%, #B8DCEE 100%)' }}
+      style={{
+        background: '#FFF8F0',
+        backgroundImage: `
+          repeating-linear-gradient(0deg, transparent 0px, transparent 29px, rgba(200,40,30,0.055) 29px, rgba(200,40,30,0.055) 30px),
+          repeating-linear-gradient(90deg, transparent 0px, transparent 29px, rgba(200,40,30,0.055) 29px, rgba(200,40,30,0.055) 30px)
+        `,
+      }}
     >
       {/* Floating background emojis */}
-      <div className="absolute text-[12rem] opacity-[0.14] animate-float select-none top-[10%] left-[-5%]">🍕</div>
-      <div className="absolute text-[8rem] opacity-[0.14] select-none top-[50%] right-[-5%]" style={{ animation: 'float 8s ease-in-out -3s infinite' }}>🎵</div>
-      <div className="absolute text-[6rem] opacity-[0.14] select-none bottom-[5%] left-[30%]" style={{ animation: 'float 8s ease-in-out -5s infinite' }}>🎸</div>
+      <div className="absolute text-[12rem] opacity-[0.1] animate-float select-none top-[10%] left-[-5%]">🍕</div>
+      <div className="absolute text-[8rem] opacity-[0.1] select-none top-[50%] right-[-5%]" style={{ animation: 'float 8s ease-in-out -3s infinite' }}>🎵</div>
+      <div className="absolute text-[6rem] opacity-[0.1] select-none bottom-[5%] left-[30%]" style={{ animation: 'float 8s ease-in-out -5s infinite' }}>🎸</div>
 
-      {/* Vinyl SVG decoration */}
+      {/* Vinyl SVG decoration — burgundy palette */}
       <svg
-        className="absolute right-[8%] top-1/2 w-[360px] h-[360px] opacity-[0.25] animate-spin-slow hidden lg:block"
+        className="absolute right-[8%] top-1/2 w-[360px] h-[360px] opacity-[0.22] animate-spin-slow hidden lg:block"
         style={{ transform: 'translateY(-50%)' }}
         viewBox="0 0 400 400"
         fill="none"
       >
-        <circle cx="200" cy="200" r="198" fill="#1E3A5F" stroke="#DC2626" strokeWidth="1.5" strokeOpacity="0.4" />
-        <circle cx="200" cy="200" r="160" fill="#2D5282" />
-        <circle cx="200" cy="200" r="140" fill="none" stroke="#DC2626" strokeWidth="0.5" strokeOpacity="0.25" />
-        <circle cx="200" cy="200" r="120" fill="none" stroke="#4A7FC1" strokeWidth="1.5" />
-        <circle cx="200" cy="200" r="100" fill="none" stroke="#DC2626" strokeWidth="0.5" strokeOpacity="0.25" />
-        <circle cx="200" cy="200" r="80"  fill="none" stroke="#4A7FC1" strokeWidth="1.5" />
-        <circle cx="200" cy="200" r="60"  fill="#1E3A5F" stroke="#DC2626" strokeWidth="0.5" strokeOpacity="0.35" />
-        <circle cx="200" cy="200" r="20"  fill="#DC2626" />
-        <circle cx="200" cy="200" r="6"   fill="#2D5282" />
+        <circle cx="200" cy="200" r="198" fill="#3D0C0C" stroke="#C8281E" strokeWidth="1.5" strokeOpacity="0.4" />
+        <circle cx="200" cy="200" r="160" fill="#5C1A1A" />
+        <circle cx="200" cy="200" r="140" fill="none" stroke="#C8281E" strokeWidth="0.5" strokeOpacity="0.25" />
+        <circle cx="200" cy="200" r="120" fill="none" stroke="#8B3A3A" strokeWidth="1.5" />
+        <circle cx="200" cy="200" r="100" fill="none" stroke="#C8281E" strokeWidth="0.5" strokeOpacity="0.25" />
+        <circle cx="200" cy="200" r="80"  fill="none" stroke="#8B3A3A" strokeWidth="1.5" />
+        <circle cx="200" cy="200" r="60"  fill="#3D0C0C" stroke="#C8281E" strokeWidth="0.5" strokeOpacity="0.35" />
+        <circle cx="200" cy="200" r="20"  fill="#C8281E" />
+        <circle cx="200" cy="200" r="6"   fill="#5C1A1A" />
       </svg>
-
-      {/* ☁️ Cloud — top-left */}
-      <div className="absolute top-[90px] left-[3%] opacity-90 pointer-events-none select-none hidden sm:block">
-        <svg viewBox="0 0 200 90" width="200" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="100" cy="68" rx="90" ry="26" />
-          <ellipse cx="68"  cy="52" rx="42" ry="32" />
-          <ellipse cx="132" cy="46" rx="38" ry="30" />
-          <ellipse cx="100" cy="40" rx="32" ry="26" />
-        </svg>
-      </div>
-
-      {/* ☁️ Cloud — top-right (smaller, more transparent) */}
-      <div className="absolute top-[120px] right-[16%] opacity-70 pointer-events-none select-none hidden md:block">
-        <svg viewBox="0 0 140 65" width="130" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="70"  cy="48" rx="62" ry="19" />
-          <ellipse cx="46"  cy="35" rx="30" ry="22" />
-          <ellipse cx="90"  cy="30" rx="27" ry="20" />
-          <ellipse cx="70"  cy="27" rx="22" ry="16" />
-        </svg>
-      </div>
-
-      {/* ☁️ Cloud — mid-left (tiny accent) */}
-      <div className="absolute top-[55%] left-[1%] opacity-50 pointer-events-none select-none hidden xl:block">
-        <svg viewBox="0 0 110 50" width="100" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="55" cy="36" rx="48" ry="15" />
-          <ellipse cx="36" cy="26" rx="22" ry="18" />
-          <ellipse cx="70" cy="22" rx="20" ry="16" />
-        </svg>
-      </div>
 
       {/* 🌍 Globe — bottom-left, partially cropped */}
       <div
         className="absolute bottom-[-70px] left-[-55px] pointer-events-none select-none hidden md:block"
-        style={{ fontSize: '300px', lineHeight: 1, opacity: 0.72 }}
+        style={{ fontSize: '300px', lineHeight: 1, opacity: 0.65 }}
       >🌍</div>
 
       {/* 🎈 Hot air balloon + 🚌 Pizza bus — bottom-right */}
@@ -93,17 +70,18 @@ export default function Hero() {
         <div style={{ fontSize: '24px', marginTop: '-2px' }}>🍕</div>
       </div>
 
-      {/* 🎊 Confetti dots */}
+      {/* 🎊 Confetti dots — warm + one sky blue touch */}
       {[
-        { top: '20%', left: '20%', color: '#DC2626', w: 8,  h: 13 },
-        { top: '30%', left: '76%', color: '#FCD34D', w: 10, h: 6  },
-        { top: '44%', left: '11%', color: '#FCD34D', w: 7,  h: 12 },
-        { top: '58%', left: '86%', color: '#DC2626', w: 9,  h: 6  },
-        { top: '24%', left: '63%', color: '#FCD34D', w: 6,  h: 11 },
-        { top: '70%', left: '30%', color: '#DC2626', w: 8,  h: 5  },
-        { top: '38%', left: '90%', color: '#FCD34D', w: 6,  h: 10 },
-        { top: '15%', left: '42%', color: '#DC2626', w: 7,  h: 7  },
-        { top: '80%', left: '55%', color: '#FCD34D', w: 9,  h: 5  },
+        { top: '20%', left: '20%', color: '#C8281E', w: 8,  h: 13 },
+        { top: '30%', left: '76%', color: '#F5C235', w: 10, h: 6  },
+        { top: '44%', left: '11%', color: '#F5C235', w: 7,  h: 12 },
+        { top: '58%', left: '86%', color: '#C8281E', w: 9,  h: 6  },
+        { top: '24%', left: '63%', color: '#F5C235', w: 6,  h: 11 },
+        { top: '70%', left: '30%', color: '#C8281E', w: 8,  h: 5  },
+        { top: '38%', left: '90%', color: '#F5C235', w: 6,  h: 10 },
+        { top: '15%', left: '42%', color: '#C8281E', w: 7,  h: 7  },
+        { top: '80%', left: '55%', color: '#F5C235', w: 9,  h: 5  },
+        { top: '35%', left: '52%', color: '#5BB8E0', w: 6,  h: 10 },
       ].map((c, i) => (
         <div
           key={i}
@@ -112,7 +90,7 @@ export default function Hero() {
             top: c.top, left: c.left,
             width: c.w, height: c.h,
             background: c.color,
-            opacity: 0.5,
+            opacity: 0.45,
             transform: `rotate(${i * 23}deg)`,
           }}
         />
@@ -129,7 +107,7 @@ export default function Hero() {
           className="font-display italic leading-none text-pizza-dark mb-2"
           style={{
             fontSize: 'clamp(3rem, 8vw, 6rem)',
-            textShadow: '3px 3px 0 rgba(220,38,38,0.2), 0 0 60px rgba(168,212,234,0.4)',
+            textShadow: '3px 3px 0 rgba(200,40,30,0.15)',
           }}
         >
           Pizza<span className="text-pizza-gold not-italic">DAO</span>
@@ -137,9 +115,16 @@ export default function Hero() {
           {T.title}
         </h1>
 
+        {/* Italian tricolor stripe */}
+        <div style={{
+          width: 60, height: 4, borderRadius: 2,
+          margin: '14px auto 6px',
+          background: 'linear-gradient(to right, #1A6B3A 33.3%, #FFF8F0 33.3% 66.6%, #C8281E 66.6%)',
+        }} />
+
         {/* Subtitle */}
         <p
-          className="font-body font-light mb-6 uppercase tracking-[0.25em] text-pizza-body"
+          className="font-accent mb-6 uppercase tracking-[0.25em] text-pizza-body"
           style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.95rem)' }}
         >
           Eat · Vibe · Create
@@ -154,27 +139,27 @@ export default function Hero() {
         <div className="flex gap-4 justify-center flex-wrap">
           <button
             onClick={() => scrollTo('canciones')}
-            className="bg-pizza-red text-white px-8 py-3.5 rounded-full font-accent text-lg border-none cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(220,38,38,0.4)] flex items-center gap-2 shadow-[0_4px_20px_rgba(220,38,38,0.25)]"
+            className="bg-pizza-red text-white px-8 py-3.5 rounded-full font-accent text-lg border-none cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(200,40,30,0.4)] flex items-center gap-2 shadow-[0_4px_20px_rgba(200,40,30,0.25)]"
           >
             {T.btn1}
           </button>
           <button
             onClick={() => scrollTo('concurso')}
-            className="bg-white text-pizza-body px-8 py-3.5 rounded-full font-accent text-lg cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] flex items-center gap-2 border border-pizza-border shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
+            className="bg-white text-pizza-body px-8 py-3.5 rounded-full font-accent text-lg cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] flex items-center gap-2 border border-pizza-border shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
           >
             {T.btn2}
           </button>
         </div>
 
         {/* Stats */}
-        <div className="flex justify-center gap-12 mt-12 pt-8" style={{ borderTop: '1px solid rgba(209,213,219,0.6)' }}>
+        <div className="flex justify-center gap-12 mt-12 pt-8" style={{ borderTop: '1px solid rgba(232,213,183,0.7)' }}>
           {[
             { num: '14',     label: T.statSongs  },
             { num: '$350',   label: T.statPrizes },
             { num: '∞',      label: T.statPizzas },
           ].map(({ num, label }) => (
             <div key={label} className="text-center">
-              <span className="font-display italic text-[2rem] text-pizza-red block">{num}</span>
+              <span className="font-display italic text-[2.2rem] font-bold text-pizza-red block">{num}</span>
               <span className="text-[0.75rem] uppercase tracking-[0.15em] font-body text-pizza-muted">{label}</span>
             </div>
           ))}
