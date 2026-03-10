@@ -187,16 +187,18 @@ export default function Contest() {
                   </div>
                   {/* Center label */}
                   <div
-                    className="vinyl-label absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full flex flex-col items-center justify-center"
+                    className="vinyl-label absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full flex flex-col items-center justify-between"
                     style={{
                       width: '104px', height: '104px',
+                      padding: '14px 0 12px',
                       background: 'linear-gradient(135deg, #F59E0B 0%, #B45309 100%)',
                       boxShadow: '0 0 28px rgba(245,158,11,0.6)',
                     }}
                   >
-                    <span className="text-2xl mt-[-18px] mb-1.5">🍕</span>
-                    <span className="text-[0.58rem] font-black text-white uppercase tracking-[0.12em] leading-none mb-3">PizzaDAO</span>
-                    <div className="absolute w-3 h-3 rounded-full bg-[#1C0800]" style={{ bottom: '12px' }} />
+                    <span className="text-2xl leading-none">🍕</span>
+                    {/* Center hole — true center */}
+                    <div className="absolute w-3 h-3 rounded-full bg-[#1C0800]" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                    <span className="text-[0.58rem] font-black text-white uppercase tracking-[0.12em]">PizzaDAO</span>
                   </div>
                 </div>
               </div>
