@@ -194,9 +194,9 @@ export default function Contest() {
                       boxShadow: '0 0 28px rgba(245,158,11,0.6)',
                     }}
                   >
-                    <span className="text-2xl mt-[-8px] mb-1">🍕</span>
-                    <span className="text-[0.58rem] font-black text-white uppercase tracking-[0.12em] leading-none">PizzaDAO</span>
-                    <div className="absolute w-3 h-3 rounded-full bg-[#1C0800]" />
+                    <span className="text-2xl mt-[-18px] mb-1.5">🍕</span>
+                    <span className="text-[0.58rem] font-black text-white uppercase tracking-[0.12em] leading-none mb-3">PizzaDAO</span>
+                    <div className="absolute w-3 h-3 rounded-full bg-[#1C0800]" style={{ bottom: '12px' }} />
                   </div>
                 </div>
               </div>
