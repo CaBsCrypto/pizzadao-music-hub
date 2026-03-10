@@ -54,9 +54,9 @@ export default function GameSection() {
                 key={key}
                 className="font-body font-bold text-[0.8rem] px-3 py-1.5 rounded-md"
                 style={{
-                  background: 'rgba(255,255,255,0.1)',
-                  border: '1px solid rgba(255,255,255,0.28)',
-                  color: '#EF4444',
+                  background: 'rgba(245,158,11,0.12)',
+                  border: '1px solid rgba(245,158,11,0.45)',
+                  color: '#FCD34D',
                   boxShadow: '0 3px 0 rgba(0,0,0,0.5)',
                   letterSpacing: '0.05em',
                 }}
