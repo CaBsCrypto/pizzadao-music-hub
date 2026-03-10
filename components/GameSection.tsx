@@ -37,38 +37,44 @@ export default function GameSection() {
         </div>
 
         {/* Controls hint */}
-        <div className="flex flex-col items-center gap-2.5 mb-5">
+        <div
+          className="flex flex-col items-center gap-3 mb-5 px-6 py-4 rounded-2xl"
+          style={{
+            background: 'rgba(255,255,255,0.05)',
+            border: '1px solid rgba(255,255,255,0.1)',
+          }}
+        >
           {/* Keys row */}
           <div className="flex items-center gap-3 flex-wrap justify-center">
-            <span className="font-body text-[0.65rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(200,233,255,0.4)' }}>
+            <span className="font-body text-[0.7rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(200,233,255,0.65)' }}>
               Controles:
             </span>
             {['A', 'S', 'K', 'L'].map((key) => (
               <kbd
                 key={key}
-                className="font-body font-bold text-[0.75rem] px-2.5 py-1 rounded-md"
+                className="font-body font-bold text-[0.8rem] px-3 py-1.5 rounded-md"
                 style={{
-                  background: 'rgba(255,255,255,0.07)',
-                  border: '1px solid rgba(255,255,255,0.18)',
-                  color: 'rgba(220,38,38,0.9)',
-                  boxShadow: '0 2px 0 rgba(0,0,0,0.4)',
+                  background: 'rgba(255,255,255,0.1)',
+                  border: '1px solid rgba(255,255,255,0.28)',
+                  color: '#EF4444',
+                  boxShadow: '0 3px 0 rgba(0,0,0,0.5)',
                   letterSpacing: '0.05em',
                 }}
               >
                 {key}
               </kbd>
             ))}
-            <span className="font-body text-[0.65rem] uppercase tracking-[0.15em]" style={{ color: 'rgba(200,233,255,0.35)' }}>
+            <span className="font-body text-[0.7rem] uppercase tracking-[0.15em]" style={{ color: 'rgba(200,233,255,0.5)' }}>
               — 4 carriles
             </span>
           </div>
           {/* Warning row */}
           <div
             className="flex items-center gap-2 px-4 py-1.5 rounded-full"
-            style={{ background: 'rgba(220,38,38,0.1)', border: '1px solid rgba(220,38,38,0.25)' }}
+            style={{ background: 'rgba(220,38,38,0.15)', border: '1px solid rgba(220,38,38,0.4)' }}
           >
             <span className="text-sm">⚠️</span>
-            <span className="font-body text-[0.65rem] uppercase tracking-[0.15em]" style={{ color: 'rgba(220,38,38,0.8)' }}>
+            <span className="font-body text-[0.7rem] uppercase tracking-[0.15em]" style={{ color: 'rgba(255,120,120,0.95)' }}>
               Solo las 🍕 pizzas cuentan — ¡cuidado con lo demás!
             </span>
           </div>
