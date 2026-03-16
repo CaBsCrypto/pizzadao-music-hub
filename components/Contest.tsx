@@ -108,14 +108,14 @@ export default function Contest() {
       )}
 
       {/* ── Section ── */}
-      <section id="concurso" className="py-20 px-6 relative overflow-hidden" style={{ background: '#E03030' }}>
+      <section id="concurso" className="py-20 px-6 relative overflow-hidden" style={{ background: '#1E2A1A' }}>
 
         {/* Background pizza watermark */}
         <div className="absolute text-[28rem] opacity-[0.06] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">🍕</div>
 
         {/* ── ZONA 1: Header ── */}
         <div className="text-center mb-14 relative z-10">
-          <div className="inline-block bg-transparent border border-pizza-red text-pizza-red text-xs font-body font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-[20px] mb-4">
+          <div className="inline-block bg-transparent border border-white/30 text-white/70 text-xs font-body font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-[20px] mb-4">
             {T.badge}
           </div>
           <h2
@@ -124,7 +124,7 @@ export default function Contest() {
           >
             {T.title}
           </h2>
-          <p className="max-w-[560px] mx-auto leading-[1.8] font-body text-[0.9rem]" style={{ color: 'rgba(240,208,192,0.7)' }}>
+          <p className="max-w-[560px] mx-auto leading-[1.8] font-body text-[0.9rem]" style={{ color: 'rgba(210,235,190,0.75)' }}>
             {T.description}
           </p>
         </div>
@@ -263,14 +263,14 @@ export default function Contest() {
 
             </div>{/* /plinth */}
 
-            <p className="text-[0.7rem] font-body tracking-wide" style={{ color: 'rgba(255,220,200,0.6)' }}>
+            <p className="text-[0.7rem] font-body tracking-wide" style={{ color: 'rgba(210,235,190,0.6)' }}>
               {T.deadlineLabel} &nbsp;·&nbsp; {T.open}
             </p>
           </div>
 
           {/* Col derecha — Premios */}
           <div>
-            <h3 className="font-display italic text-[1.5rem] text-white mb-5 tracking-wide">{T.prizesTitle}</h3>
+            <h3 className="font-display italic text-[1.5rem] text-pizza-gold mb-5 tracking-wide">{T.prizesTitle}</h3>
             {T.prizes.map((p) => {
               const s = prizeStyles[p.style];
               return (
@@ -296,8 +296,8 @@ export default function Contest() {
             })}
             {/* Collab note */}
             <div className="mt-4 px-1">
-              <p className="text-[0.8rem] leading-relaxed font-body" style={{ color: 'rgba(255,220,200,0.7)' }}>
-                🤝 <span style={{ color: 'rgba(255,220,200,0.9)' }}>{T.collab}</span> {T.collabDesc}
+              <p className="text-[0.8rem] leading-relaxed font-body" style={{ color: 'rgba(210,235,190,0.7)' }}>
+                🤝 <span style={{ color: 'rgba(210,235,190,0.9)' }}>{T.collab}</span> {T.collabDesc}
               </p>
             </div>
           </div>
@@ -307,7 +307,7 @@ export default function Contest() {
         <div
           className="max-w-[1100px] mx-auto rounded-2xl overflow-hidden relative z-10"
           style={{
-            border: '1px solid rgba(255,200,160,0.4)',
+            border: '1px solid rgba(160,200,130,0.3)',
             background: '#FEFCF8',
             boxShadow: '0 4px 40px rgba(0,0,0,0.2)',
           }}
@@ -337,7 +337,7 @@ export default function Contest() {
             </span>
             <span
               className="text-[0.65rem] font-black uppercase tracking-[0.2em] px-2.5 py-1 rounded-md"
-              style={{ background: 'rgba(220,38,38,0.08)', color: '#DC2626', border: '1px solid rgba(220,38,38,0.25)' }}
+              style={{ background: 'rgba(74,112,64,0.12)', color: '#566B45', border: '1px solid rgba(74,112,64,0.3)' }}
             >
               CC0
             </span>

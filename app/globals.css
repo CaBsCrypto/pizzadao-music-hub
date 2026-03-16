@@ -11,9 +11,9 @@
 
   body {
     font-family: var(--font-nunito), sans-serif;
-    background: #FFF8F0;
+    background: #FFFDF5;
     background-attachment: fixed;
-    color: #3D2B1F;
+    color: #2D2A1F;
     overflow-x: hidden;
   }
 
@@ -30,8 +30,8 @@
 
   /* Custom scrollbar — warm */
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #E8D0B0; }
-  ::-webkit-scrollbar-thumb { background: #E03030; border-radius: 3px; }
+  ::-webkit-scrollbar-track { background: #C0B878; }
+  ::-webkit-scrollbar-thumb { background: #4A7040; border-radius: 3px; }
 }
 
 @layer utilities {

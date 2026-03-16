@@ -9,26 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Festival V3 — cream sections, red hero/contest, dark footer
-        "pizza-bg":           "#FFF8F0",
-        "pizza-sky-mid":      "#FFF0E0",
+        // V5 Oliva Mediterráneo — cream + olive + gold
+        "pizza-bg":           "#FFFDF5",
+        "pizza-sky-mid":      "#F2EDD5",
         "pizza-surface":      "#FFFFFF",
         "pizza-raised":       "#FEFCF8",
-        "pizza-border":       "#E8D0B0",
+        "pizza-border":       "#C0B878",
         // Text (warm dark on cream)
-        "pizza-dark":         "#1A0A00",
-        "pizza-body":         "#3D2B1F",
-        "pizza-muted":        "#8B6B4A",
-        "pizza-cream":        "#FFF8F0",
-        // Dark sections (Game + Footer → deep burgundy)
-        "pizza-dark-bg":      "#3D0C0C",
-        "pizza-dark-surface": "#5C1A1A",
-        "pizza-dark-border":  "#8B3A3A",
-        // Brand accents — vivid RED for dark bg
-        "pizza-red":          "#E03030",
-        "pizza-red-hover":    "#C02020",
+        "pizza-dark":         "#1A1A0A",
+        "pizza-body":         "#2D2A1F",
+        "pizza-muted":        "#7A7040",
+        "pizza-cream":        "#FFFDF5",
+        // Dark sections (Game + Footer → deep olive)
+        "pizza-dark-bg":      "#1E2A1A",
+        "pizza-dark-surface": "#2D3D26",
+        "pizza-dark-border":  "#566B45",
+        // Brand accents — olive primary, gold secondary
+        "pizza-red":          "#4A7040",
+        "pizza-red-hover":    "#3D5A34",
         "pizza-orange":       "#E85D20",
-        "pizza-gold":         "#E09010",
+        "pizza-gold":         "#C9A227",
         "pizza-yellow":       "#F5C235",
         "pizza-green":        "#1A6B3A",
       },
