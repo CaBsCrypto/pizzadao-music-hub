@@ -19,7 +19,11 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-[70px]"
       style={{
-        background: '#F0F5EC',
+        background: '#1C0C08',
+        backgroundImage: `
+          repeating-linear-gradient(0deg, transparent 0px, transparent 19px, rgba(180,20,20,0.15) 19px, rgba(180,20,20,0.15) 40px),
+          repeating-linear-gradient(90deg, transparent 0px, transparent 19px, rgba(180,20,20,0.15) 19px, rgba(180,20,20,0.15) 40px)
+        `,
       }}
     >
       {/* Floating background emojis */}
@@ -34,15 +38,15 @@ export default function Hero() {
         viewBox="0 0 400 400"
         fill="none"
       >
-        <circle cx="200" cy="200" r="198" fill="#1E2A1A" stroke="#C9A227" strokeWidth="1.5" strokeOpacity="0.4" />
-        <circle cx="200" cy="200" r="160" fill="#2D3D26" />
-        <circle cx="200" cy="200" r="140" fill="none" stroke="#C9A227" strokeWidth="0.5" strokeOpacity="0.25" />
-        <circle cx="200" cy="200" r="120" fill="none" stroke="#566B45" strokeWidth="1.5" />
-        <circle cx="200" cy="200" r="100" fill="none" stroke="#C9A227" strokeWidth="0.5" strokeOpacity="0.25" />
-        <circle cx="200" cy="200" r="80"  fill="none" stroke="#566B45" strokeWidth="1.5" />
-        <circle cx="200" cy="200" r="60"  fill="#1E2A1A" stroke="#C9A227" strokeWidth="0.5" strokeOpacity="0.35" />
-        <circle cx="200" cy="200" r="20"  fill="#C9A227" />
-        <circle cx="200" cy="200" r="6"   fill="#2D3D26" />
+        <circle cx="200" cy="200" r="198" fill="#3D0C0C" stroke="#C8281E" strokeWidth="1.5" strokeOpacity="0.4" />
+        <circle cx="200" cy="200" r="160" fill="#5C1A1A" />
+        <circle cx="200" cy="200" r="140" fill="none" stroke="#C8281E" strokeWidth="0.5" strokeOpacity="0.25" />
+        <circle cx="200" cy="200" r="120" fill="none" stroke="#8B3A3A" strokeWidth="1.5" />
+        <circle cx="200" cy="200" r="100" fill="none" stroke="#C8281E" strokeWidth="0.5" strokeOpacity="0.25" />
+        <circle cx="200" cy="200" r="80"  fill="none" stroke="#8B3A3A" strokeWidth="1.5" />
+        <circle cx="200" cy="200" r="60"  fill="#3D0C0C" stroke="#C8281E" strokeWidth="0.5" strokeOpacity="0.35" />
+        <circle cx="200" cy="200" r="20"  fill="#C8281E" />
+        <circle cx="200" cy="200" r="6"   fill="#5C1A1A" />
       </svg>
 
       {/* 🌍 Globe — bottom-left, partially cropped */}
@@ -75,10 +79,10 @@ export default function Hero() {
 
         {/* Title */}
         <h1
-          className="font-display italic leading-none text-pizza-dark mb-2"
+          className="font-display italic leading-none text-white mb-2"
           style={{
             fontSize: 'clamp(3rem, 8vw, 6rem)',
-            textShadow: '3px 3px 0 rgba(74,112,64,0.15)',
+            textShadow: '3px 3px 0 rgba(0,0,0,0.4)',
           }}
         >
           Pizza<span className="text-pizza-gold not-italic">DAO</span>
@@ -95,7 +99,7 @@ export default function Hero() {
         </p>
 
         {/* Description */}
-        <p className="max-w-[540px] mx-auto mb-10 leading-[1.8] font-body text-[0.95rem] text-pizza-body">
+        <p className="max-w-[540px] mx-auto mb-10 leading-[1.8] font-body text-[0.95rem]" style={{ color: 'rgba(232,208,184,0.8)' }}>
           {T.description}
         </p>
 
@@ -110,14 +114,14 @@ export default function Hero() {
           <button
             onClick={() => scrollTo('concurso')}
             className="px-8 py-3.5 rounded-full font-accent text-lg cursor-pointer transition-all hover:-translate-y-1 flex items-center gap-2"
-            style={{ background: 'rgba(74,112,64,0.12)', color: '#2D2A1F', border: '1px solid rgba(74,112,64,0.4)' }}
+            style={{ background: 'rgba(255,255,255,0.08)', color: 'white', border: '1px solid rgba(255,255,255,0.25)' }}
           >
             {T.btn2}
           </button>
         </div>
 
         {/* Stats */}
-        <div className="flex justify-center gap-12 mt-12 pt-8" style={{ borderTop: '1px solid rgba(74,112,64,0.25)' }}>
+        <div className="flex justify-center gap-12 mt-12 pt-8" style={{ borderTop: '1px solid rgba(180,20,20,0.3)' }}>
           {[
             { num: '14',     label: T.statSongs  },
             { num: '$350',   label: T.statPrizes },
@@ -125,7 +129,7 @@ export default function Hero() {
           ].map(({ num, label }) => (
             <div key={label} className="text-center">
               <span className="font-display italic text-[2.2rem] font-bold text-pizza-gold block">{num}</span>
-              <span className="text-[0.75rem] uppercase tracking-[0.15em] font-body text-pizza-muted">{label}</span>
+              <span className="text-[0.75rem] uppercase tracking-[0.15em] font-body" style={{ color: 'rgba(232,208,184,0.6)' }}>{label}</span>
             </div>
           ))}
         </div>

@@ -14,7 +14,7 @@ export default function GameSection() {
         className="absolute inset-0 pointer-events-none opacity-[0.06]"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(100,160,80,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(100,160,80,0.3) 1px, transparent 1px)',
+            'linear-gradient(rgba(180,20,20,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(180,20,20,0.3) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }}
       />
@@ -22,16 +22,16 @@ export default function GameSection() {
       <div className="relative z-10 flex flex-col items-center">
         {/* Section header */}
         <div className="text-center mb-10">
-          <div className="inline-block bg-transparent border border-[rgba(74,112,64,0.5)] text-pizza-red text-xs font-body font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-[20px] mb-4">
+          <div className="inline-block bg-transparent border border-pizza-red text-pizza-red text-xs font-body font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-[20px] mb-4">
             {T.badge}
           </div>
           <h2
             className="font-display italic text-pizza-cream mb-2"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', textShadow: '0 0 40px rgba(74,112,64,0.2)' }}
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', textShadow: '0 0 40px rgba(180,20,20,0.2)' }}
           >
             Rhythm <span className="text-pizza-red">Slice</span>
           </h2>
-          <p className="font-body text-[0.85rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(100,160,80,0.85)' }}>
+          <p className="font-body text-[0.85rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(232,208,184,0.7)' }}>
             Guitar Hero × PizzaDAO
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function GameSection() {
         >
           {/* Keys row */}
           <div className="flex items-center gap-3 flex-wrap justify-center">
-            <span className="font-body text-[0.7rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(210,240,180,0.65)' }}>
+            <span className="font-body text-[0.7rem] uppercase tracking-[0.2em]" style={{ color: 'rgba(232,208,184,0.65)' }}>
               Controles:
             </span>
             {['A', 'S', 'K', 'L'].map((key) => (
@@ -64,17 +64,17 @@ export default function GameSection() {
                 {key}
               </kbd>
             ))}
-            <span className="font-body text-[0.7rem] uppercase tracking-[0.15em]" style={{ color: 'rgba(210,240,180,0.5)' }}>
+            <span className="font-body text-[0.7rem] uppercase tracking-[0.15em]" style={{ color: 'rgba(232,208,184,0.5)' }}>
               — 4 carriles
             </span>
           </div>
           {/* Warning row */}
           <div
             className="flex items-center gap-2 px-4 py-1.5 rounded-full"
-            style={{ background: 'rgba(74,112,64,0.15)', border: '1px solid rgba(74,112,64,0.4)' }}
+            style={{ background: 'rgba(180,20,20,0.12)', border: '1px solid rgba(180,20,20,0.35)' }}
           >
             <span className="text-sm">⚠️</span>
-            <span className="font-body text-[0.7rem] uppercase tracking-[0.15em]" style={{ color: 'rgba(160,220,130,0.95)' }}>
+            <span className="font-body text-[0.7rem] uppercase tracking-[0.15em]" style={{ color: 'rgba(232,208,184,0.9)' }}>
               Solo las 🍕 pizzas cuentan — ¡cuidado con lo demás!
             </span>
           </div>
@@ -84,9 +84,9 @@ export default function GameSection() {
         <div
           className="w-full max-w-4xl rounded-2xl overflow-hidden"
           style={{
-            border: '1px solid rgba(200,100,100,0.3)',
-            background: '#1E2A1A',
-            boxShadow: '0 0 60px rgba(30,42,26,0.5), 0 30px 80px rgba(0,0,0,0.4)',
+            border: '1px solid rgba(180,20,20,0.4)',
+            background: '#0E0605',
+            boxShadow: '0 0 60px rgba(180,20,20,0.15), 0 30px 80px rgba(0,0,0,0.4)',
             height: '600px',
           }}
         >

@@ -9,26 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // V5 Oliva Mediterráneo — cream + olive + gold
-        "pizza-bg":           "#F0F5EC",
-        "pizza-sky-mid":      "#E8F0E2",
+        // V6 Trattoria Italiana — dark brick + gingham red + candle gold
+        "pizza-bg":           "#1C0C08",
+        "pizza-sky-mid":      "#160A06",
         "pizza-surface":      "#FFFFFF",
-        "pizza-raised":       "#FFFFFF",
-        "pizza-border":       "#B5C9A5",
-        // Text (warm dark on cream)
-        "pizza-dark":         "#1A1A0A",
-        "pizza-body":         "#2D2A1F",
-        "pizza-muted":        "#7A7040",
-        "pizza-cream":        "#F0F5EC",
-        // Dark sections (Game + Footer → deep olive)
-        "pizza-dark-bg":      "#1E2A1A",
-        "pizza-dark-surface": "#2D3D26",
-        "pizza-dark-border":  "#566B45",
-        // Brand accents — olive primary, gold secondary
-        "pizza-red":          "#4A7040",
-        "pizza-red-hover":    "#3D5A34",
+        "pizza-raised":       "#FEFCF8",
+        "pizza-border":       "#5A1010",
+        // Text (dark on light cards — NOT for dark sections)
+        "pizza-dark":         "#1A0A00",
+        "pizza-body":         "#3D2B1F",
+        "pizza-muted":        "#8B6B4A",
+        "pizza-cream":        "#FEFCF8",
+        // Dark sections (Game + Footer → deepest dark wood)
+        "pizza-dark-bg":      "#0E0605",
+        "pizza-dark-surface": "#1C0C08",
+        "pizza-dark-border":  "#5A1010",
+        // Brand accents — Italian red + candle gold
+        "pizza-red":          "#C41C1C",
+        "pizza-red-hover":    "#A01515",
         "pizza-orange":       "#E85D20",
-        "pizza-gold":         "#C9A227",
+        "pizza-gold":         "#E8A830",
         "pizza-yellow":       "#F5C235",
         "pizza-green":        "#1A6B3A",
       },

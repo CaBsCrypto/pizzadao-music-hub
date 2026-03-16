@@ -108,7 +108,7 @@ export default function Contest() {
       )}
 
       {/* ── Section ── */}
-      <section id="concurso" className="py-20 px-6 relative overflow-hidden" style={{ background: '#1E2A1A' }}>
+      <section id="concurso" className="py-20 px-6 relative overflow-hidden" style={{ background: '#1C0C08' }}>
 
         {/* Background pizza watermark */}
         <div className="absolute text-[28rem] opacity-[0.06] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">🍕</div>
@@ -124,7 +124,7 @@ export default function Contest() {
           >
             {T.title}
           </h2>
-          <p className="max-w-[560px] mx-auto leading-[1.8] font-body text-[0.9rem]" style={{ color: 'rgba(210,235,190,0.75)' }}>
+          <p className="max-w-[560px] mx-auto leading-[1.8] font-body text-[0.9rem]" style={{ color: 'rgba(232,208,184,0.75)' }}>
             {T.description}
           </p>
         </div>
@@ -263,7 +263,7 @@ export default function Contest() {
 
             </div>{/* /plinth */}
 
-            <p className="text-[0.7rem] font-body tracking-wide" style={{ color: 'rgba(210,235,190,0.6)' }}>
+            <p className="text-[0.7rem] font-body tracking-wide" style={{ color: 'rgba(232,208,184,0.6)' }}>
               {T.deadlineLabel} &nbsp;·&nbsp; {T.open}
             </p>
           </div>
@@ -296,8 +296,8 @@ export default function Contest() {
             })}
             {/* Collab note */}
             <div className="mt-4 px-1">
-              <p className="text-[0.8rem] leading-relaxed font-body" style={{ color: 'rgba(210,235,190,0.7)' }}>
-                🤝 <span style={{ color: 'rgba(210,235,190,0.9)' }}>{T.collab}</span> {T.collabDesc}
+              <p className="text-[0.8rem] leading-relaxed font-body" style={{ color: 'rgba(232,208,184,0.7)' }}>
+                🤝 <span style={{ color: 'rgba(232,208,184,0.95)' }}>{T.collab}</span> {T.collabDesc}
               </p>
             </div>
           </div>
@@ -307,7 +307,7 @@ export default function Contest() {
         <div
           className="max-w-[1100px] mx-auto rounded-2xl overflow-hidden relative z-10"
           style={{
-            border: '1px solid rgba(160,200,130,0.3)',
+            border: '1px solid rgba(180,20,20,0.25)',
             background: '#FEFCF8',
             boxShadow: '0 4px 40px rgba(0,0,0,0.2)',
           }}
@@ -337,7 +337,7 @@ export default function Contest() {
             </span>
             <span
               className="text-[0.65rem] font-black uppercase tracking-[0.2em] px-2.5 py-1 rounded-md"
-              style={{ background: 'rgba(74,112,64,0.12)', color: '#566B45', border: '1px solid rgba(74,112,64,0.3)' }}
+              style={{ background: 'rgba(180,20,20,0.1)', color: '#C41C1C', border: '1px solid rgba(180,20,20,0.3)' }}
             >
               CC0
             </span>

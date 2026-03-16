@@ -15,13 +15,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[999] bg-[rgba(255,248,240,0.97)] backdrop-blur-[10px] border-b border-[rgba(232,213,183,0.8)] px-8 flex items-center justify-between h-[70px] shadow-[0_2px_20px_rgba(60,12,12,0.08)]">
+    <nav className="fixed top-0 left-0 right-0 z-[999] bg-[rgba(14,6,5,0.97)] backdrop-blur-[10px] border-b border-[rgba(90,16,16,0.7)] px-8 flex items-center justify-between h-[70px] shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
       <button
         onClick={() => scrollTo('hero')}
-        className="flex items-center gap-2.5 font-accent text-2xl text-pizza-dark bg-transparent border-none cursor-pointer"
+        className="flex items-center gap-2.5 font-accent text-2xl text-white bg-transparent border-none cursor-pointer"
       >
         🍕 <span className="text-pizza-red">Pizza</span>DAO{' '}
-        <span className="text-pizza-muted text-base ml-1">Music</span>
+        <span className="text-white/40 text-base ml-1">Music</span>
       </button>
 
       <ul className="hidden md:flex gap-6 list-none items-center">
@@ -34,7 +34,7 @@ export default function Navbar() {
           <li key={id}>
             <button
               onClick={() => scrollTo(id)}
-              className="text-pizza-body font-body font-semibold text-sm uppercase tracking-[0.08em] px-2.5 py-1.5 rounded bg-transparent border-none cursor-pointer transition-colors hover:text-pizza-red hover:bg-[rgba(224,48,48,0.08)]"
+              className="text-white/70 font-body font-semibold text-sm uppercase tracking-[0.08em] px-2.5 py-1.5 rounded bg-transparent border-none cursor-pointer transition-colors hover:text-pizza-red hover:bg-[rgba(196,28,28,0.15)]"
             >
               {label}
             </button>
@@ -43,13 +43,13 @@ export default function Navbar() {
 
         {/* Language toggle */}
         <li>
-          <div className="flex items-center gap-0.5 bg-pizza-raised border border-pizza-border rounded-full p-0.5">
+          <div className="flex items-center gap-0.5 bg-white/5 border border-white/10 rounded-full p-0.5">
             <button
               onClick={() => setLang('es')}
               className={`px-3 py-1 rounded-full text-[0.7rem] font-body font-extrabold uppercase tracking-[0.06em] cursor-pointer transition-all border-none ${
                 lang === 'es'
                   ? 'bg-pizza-red text-white shadow-sm'
-                  : 'bg-transparent text-pizza-muted hover:text-pizza-body'
+                  : 'bg-transparent text-white/40 hover:text-white/70'
               }`}
             >
               ES
@@ -59,7 +59,7 @@ export default function Navbar() {
               className={`px-3 py-1 rounded-full text-[0.7rem] font-body font-extrabold uppercase tracking-[0.06em] cursor-pointer transition-all border-none ${
                 lang === 'en'
                   ? 'bg-pizza-red text-white shadow-sm'
-                  : 'bg-transparent text-pizza-muted hover:text-pizza-body'
+                  : 'bg-transparent text-white/40 hover:text-white/70'
               }`}
             >
               EN

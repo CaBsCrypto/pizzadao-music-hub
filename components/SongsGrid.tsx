@@ -26,9 +26,10 @@ export default function SongsGrid() {
       <div
         className="mx-6 md:mx-auto max-w-6xl rounded-2xl overflow-hidden relative z-10"
         style={{
-          border: '1px solid rgba(224,144,16,0.25)',
+          border: '1px solid rgba(180,20,20,0.5)',
           background: '#FEFCF8',
-          boxShadow: '0 4px 40px rgba(0,0,0,0.08)',
+          backgroundImage: `repeating-linear-gradient(0deg, transparent 0px, transparent 19px, rgba(180,0,0,0.18) 19px, rgba(180,0,0,0.18) 40px), repeating-linear-gradient(90deg, transparent 0px, transparent 19px, rgba(180,0,0,0.18) 19px, rgba(180,0,0,0.18) 40px)`,
+          boxShadow: '0 8px 48px rgba(0,0,0,0.5)',
         }}
       >
         {/* Header row */}
@@ -74,7 +75,7 @@ export default function SongsGrid() {
               msOverflowStyle: 'none',
               paddingLeft: '46px',
               paddingRight: '64px',
-              background: '#FEFCF8',
+              background: 'transparent',
             }}
           >
             {songs.map((song, index) => (
