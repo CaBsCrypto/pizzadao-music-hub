@@ -10,16 +10,16 @@ const config: Config = {
     extend: {
       colors: {
         // V5 Oliva Mediterráneo — cream + olive + gold
-        "pizza-bg":           "#FFFDF5",
-        "pizza-sky-mid":      "#F2EDD5",
+        "pizza-bg":           "#F0F5EC",
+        "pizza-sky-mid":      "#E8F0E2",
         "pizza-surface":      "#FFFFFF",
-        "pizza-raised":       "#FEFCF8",
-        "pizza-border":       "#C0B878",
+        "pizza-raised":       "#FFFFFF",
+        "pizza-border":       "#B5C9A5",
         // Text (warm dark on cream)
         "pizza-dark":         "#1A1A0A",
         "pizza-body":         "#2D2A1F",
         "pizza-muted":        "#7A7040",
-        "pizza-cream":        "#FFFDF5",
+        "pizza-cream":        "#F0F5EC",
         // Dark sections (Game + Footer → deep olive)
         "pizza-dark-bg":      "#1E2A1A",
         "pizza-dark-surface": "#2D3D26",

@@ -19,7 +19,7 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-[70px]"
       style={{
-        background: '#FFFDF5',
+        background: '#F0F5EC',
       }}
     >
       {/* Floating background emojis */}
